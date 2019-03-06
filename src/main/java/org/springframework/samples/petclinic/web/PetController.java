@@ -97,6 +97,18 @@ public class PetController {
         model.put("pet", pet);
         return VIEWS_PETS_CREATE_OR_UPDATE_FORM;
     }
+    
+    @RequestMapping(value = "/pets/{petId}/delete", method = RequestMethod.GET)
+    public String initDeleteForm(@PathVariable("petId") int petId, @PathVariable("ownerId") int ownerId, ModelMap model) {
+    	Pet pet = this.clinicService.findPetById(petId);
+        Owner owner = this.clinicService.findOwnerById(ownerId);
+        
+        owner.deletePet(pet);
+        this.clinicService.deletePet(pet);
+       
+        model.put("pet", pet);
+    	return "redirect:/owners/{ownerId}";
+    }
 
     @RequestMapping(value = "/pets/{petId}/edit", method = RequestMethod.POST)
     public String processUpdateForm(@Valid Pet pet, BindingResult result, Owner owner, ModelMap model) {
