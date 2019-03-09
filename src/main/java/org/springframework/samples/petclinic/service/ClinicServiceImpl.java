@@ -29,6 +29,7 @@ import org.springframework.samples.petclinic.repository.OwnerRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
 import org.springframework.samples.petclinic.repository.VetRepository;
 import org.springframework.samples.petclinic.repository.VisitRepository;
+import org.springframework.samples.petclinic.repository.springdatajpa.SpringDataPetRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -96,6 +97,12 @@ public class ClinicServiceImpl implements ClinicService {
     @Transactional
     public void savePet(Pet pet) throws DataAccessException {
         petRepository.save(pet);
+    }
+    
+    @Override
+    @Transactional
+    public void deletePet(Pet pet) throws DataAccessException {
+    	petRepository.deleteById(pet.getId());
     }
 
     @Override
