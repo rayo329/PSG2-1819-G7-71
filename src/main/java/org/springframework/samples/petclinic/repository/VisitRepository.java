@@ -38,8 +38,12 @@ public interface VisitRepository {
      * @param visit the <code>Visit</code> to save
      * @see BaseEntity#isNew
      */
-    void save(Visit visit) throws DataAccessException;
+    Visit save(Visit visit) throws DataAccessException;
 
     List<Visit> findByPetId(Integer petId);
+
+    void deleteById(int visitId) throws DataAccessException;
+
+    Visit findById(int id) throws DataAccessException;
 
 }

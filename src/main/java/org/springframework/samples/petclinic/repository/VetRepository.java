@@ -17,8 +17,11 @@ package org.springframework.samples.petclinic.repository;
 
 import java.util.Collection;
 
+import javax.transaction.Transactional;
+
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Vet;
+import org.springframework.stereotype.Repository;
 
 /**
  * Repository class for <code>Vet</code> domain objects All method names are compliant with Spring Data naming
@@ -38,5 +41,9 @@ public interface VetRepository {
      */
     Collection<Vet> findAll() throws DataAccessException;
 
+    void deleteById(int vetId) throws DataAccessException;
 
+    Vet findById(int vetId) throws DataAccessException;
+
+    void save(Vet vet) throws DataAccessException;
 }

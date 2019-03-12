@@ -30,6 +30,7 @@ import javax.persistence.Table;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -97,6 +98,10 @@ public class Pet extends NamedEntity {
         this.visits = visits;
     }
 
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
+    }
+
     public List<Visit> getVisits() {
         List<Visit> sortedVisits = new ArrayList<>(getVisitsInternal());
         PropertyComparator.sort(sortedVisits, new MutableSortDefinition("date", false, false));
@@ -106,6 +111,10 @@ public class Pet extends NamedEntity {
     public void addVisit(Visit visit) {
         getVisitsInternal().add(visit);
         visit.setPet(this);
+    }
+
+    public void deleteVisit(Visit visit) {
+        getVisitsInternal().remove(visit);
     }
 
 }
