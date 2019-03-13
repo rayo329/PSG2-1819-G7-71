@@ -49,4 +49,7 @@
             </td>
         </tr>
     </table>
+    
+    <br/>
+    <a class="btn btn-default" href='<spring:url value="/vets/new" htmlEscape="true"/>'>Add Veterinarian</a>
 </petclinic:layout>

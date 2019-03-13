@@ -15,14 +15,25 @@
  */
 package org.springframework.samples.petclinic.web;
 
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.samples.petclinic.model.Owner;
+import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Vets;
 import org.springframework.samples.petclinic.service.ClinicService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,13 +47,74 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class VetController {
-
-    private final ClinicService clinicService;
-
+	
+	private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = "vets/createOrUpdateOwnerForm";
+	private final ClinicService clinicService;
 
     @Autowired
     public VetController(ClinicService clinicService) {
         this.clinicService = clinicService;
+    }
+    
+    @InitBinder
+    public void setAllowedFields(WebDataBinder dataBinder) {
+        dataBinder.setDisallowedFields("id");
+    }
+    
+    
+    @ModelAttribute("specialties")
+    public Collection<Specialty> populateSpecialties() {
+        return this.clinicService.findSpecialties();
+    }
+    
+//    @ModelAttribute("veterinarian")
+//    public Vet findVet(@PathVariable("veterinarianId") int veterinarianId) {
+//        return this.clinicService.findVetById(veterinarianId);
+//    }
+//
+//    @InitBinder("veterinarian")
+//    public void initVetBinder(WebDataBinder dataBinder) {
+//        dataBinder.setDisallowedFields("id");
+//    }
+//    
+//    @InitBinder("specialty")
+//    public void initSpecialtyBinder(WebDataBinder dataBinder) {
+//        dataBinder.setValidator(new pet());
+//    }
+    
+    
+    
+//    @RequestMapping(value = "/vets/new", method = RequestMethod.GET)
+//    public String initCreationForm(Map<String, Object> model) {
+//        Vet veterinarian = new Vet();
+//        model.put("veterinarian", veterinarian);
+//        return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
+//    }
+    
+    @RequestMapping(value = "/vets/new", method = RequestMethod.GET)
+    public String initCreationForm(Map<String, Object> model) {
+    	//Specialty spec = new Specialty();
+         Vet veterinarian = new Vet();
+     //    veterinarian.addSpecialty(spec);
+        model.put("veterinarian", veterinarian);
+        return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
+    }
+    
+    @RequestMapping(value = "/vets/new", method = RequestMethod.POST)
+    public String processCreationForm(@Valid Vet veterinarian, BindingResult result) {
+        if (result.hasErrors()) {
+            return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
+        } else {
+        //	Specialty spec = new Specialty();
+        //	veterinarian.addSpecialty(spec);
+            this.clinicService.saveVeterinarian(veterinarian);
+//            return "redirect:/vets/" + veterinarian.getId();
+            Map<String,Object> model = new HashMap<>();
+            Vets vets = new Vets();
+            vets.getVetList().addAll(this.clinicService.findVets());
+            model.put("vets",vets);
+            return "vets/vetList";
+        }
     }
 
     @RequestMapping(value = { "/vets.html"})

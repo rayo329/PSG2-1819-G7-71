@@ -21,6 +21,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
 
@@ -35,6 +36,8 @@ public interface ClinicService {
     Collection<PetType> findPetTypes() throws DataAccessException;
 
     Owner findOwnerById(int id) throws DataAccessException;
+    
+    Vet findVetById(int id) throws DataAccessException;
 
     Pet findPetById(int id) throws DataAccessException;
 
@@ -52,16 +55,10 @@ public interface ClinicService {
 
 	Collection<Visit> findVisitsByPetId(int petId);
 
-    void deletePet(Pet pet) throws DataAccessException;
-    
-    void deleteOwner(Owner owner) throws DataAccessException;
-
-    void deleteVisit(int visitId) throws DataAccessException;
-
-    void deleteVet(int vetId) throws DataAccessException;
-
-    Vet findVetById(int vetId) throws DataAccessException;
-
-    void saveVet(Vet vet) throws DataAccessException;
+	void deletePet(Pet pet) throws DataAccessException;
+	
+	void saveVeterinarian(Vet veterinarian) throws DataAccessException;
+	
+	Collection<Specialty> findSpecialties() throws DataAccessException;
 
 }
