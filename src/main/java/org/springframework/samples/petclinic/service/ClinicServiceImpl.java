@@ -109,6 +109,18 @@ public class ClinicServiceImpl implements ClinicService {
 	public Collection<Visit> findVisitsByPetId(int petId) {
 		return visitRepository.findByPetId(petId);
 	}
+	
+	@Transactional
+	public void saveVet(Vet vet) throws DataAccessException{
+		vetRepository.save(vet);
+	}
+	
+	@Transactional(readOnly = true)
+	public Vet findVetById(int id) throws DataAccessException {
+		return vetRepository.findById(id);
+	}
+
+
 
 
 }

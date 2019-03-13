@@ -18,6 +18,7 @@ package org.springframework.samples.petclinic.repository;
 import java.util.Collection;
 
 import org.springframework.dao.DataAccessException;
+import org.springframework.samples.petclinic.model.BaseEntity;
 import org.springframework.samples.petclinic.model.Vet;
 
 /**
@@ -37,6 +38,22 @@ public interface VetRepository {
      * @return a <code>Collection</code> of <code>Vet</code>s
      */
     Collection<Vet> findAll() throws DataAccessException;
+    
+    /**
+     * Save a <code>Vet</code> to the data store, either inserting or updating it.
+     *
+     * @param vet the <code>Vet</code> to save
+     * @see BaseEntity#isNew
+     */
+    void save(Vet vet) throws DataAccessException;
+    
+    /**
+     * Find a <code>Vet</code> givving an id.
+     *
+     * @param vet the <code>id</code> of the vet
+     * @return the <code>vet</code> associated to <code>id</code>
+     */
+    Vet findById(int id) throws DataAccessException;
 
 
 }
