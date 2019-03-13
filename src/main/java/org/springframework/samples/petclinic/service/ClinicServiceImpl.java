@@ -23,6 +23,7 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
@@ -65,6 +66,12 @@ public class ClinicServiceImpl implements ClinicService {
     @Transactional(readOnly = true)
     public Owner findOwnerById(int id) throws DataAccessException {
         return ownerRepository.findById(id);
+    }
+    
+    @Override
+    @Transactional(readOnly = true)
+    public Vet findVetById(int id) throws DataAccessException {
+        return vetRepository.findById(id);
     }
 
     @Override
@@ -113,7 +120,7 @@ public class ClinicServiceImpl implements ClinicService {
 
     @Override
     @Transactional(readOnly = true)
-    @Cacheable(value = "vets")
+//    @Cacheable(value = "vets")
     public Collection<Vet> findVets() throws DataAccessException {
         return vetRepository.findAll();
     }
@@ -122,6 +129,13 @@ public class ClinicServiceImpl implements ClinicService {
 	public Collection<Visit> findVisitsByPetId(int petId) {
 		return visitRepository.findByPetId(petId);
 	}
+	
+	 @Override
+	 @Transactional(readOnly = true)
+	 public Collection<Specialty> findSpecialties() throws DataAccessException {
+	    return vetRepository.findSpecialties();
+	  
+	 }
 
 
 }
