@@ -89,24 +89,18 @@ public class RoomController {
     public String processNewRoomForm(@Valid Room room, BindingResult result, @RequestParam int petId, Map<String, Object> model) {
         Pet pet = this.clinicService.findPetById(petId);
 
-        //try {
-
-            room.setPet(pet);
-
-            System.out.println(room.getId());
-            System.out.println(room.getStart());
-            System.out.println(room.getEnd());
-            System.out.println(room.getPet());
-
-            this.clinicService.saveRoom(room);
-            return "redirect:/";
-        /*    
-        } catch(Throwable oops) {
+        if(result.getAllErrors().size()>1) {
             model.put("pet", pet);
             model.put("petId", petId);
+            model.put("room", room);
+ 
             return "pets/createOrUpdateRoomForm";
+        } else {
+            room.setPet(pet);
+
+            this.clinicService.saveRoom(room);
+            return "redirect:/owners";
         }
-        */
     }
 
 }
