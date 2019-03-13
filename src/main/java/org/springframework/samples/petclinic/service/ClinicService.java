@@ -16,11 +16,13 @@
 package org.springframework.samples.petclinic.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Room;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
 
@@ -63,5 +65,13 @@ public interface ClinicService {
     Vet findVetById(int vetId) throws DataAccessException;
 
     void saveVet(Vet vet) throws DataAccessException;
+
+    Room findRoomById(int id) throws DataAccessException;
+
+    void saveRoom(Room room) throws DataAccessException;
+
+    Collection<Room> findRoomsByPetId(int petId);
+
+    void deleteRoom(int roomId) throws DataAccessException;
 
 }

@@ -16,16 +16,19 @@
 package org.springframework.samples.petclinic.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Room;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
+import org.springframework.samples.petclinic.repository.RoomRepository;
 import org.springframework.samples.petclinic.repository.VetRepository;
 import org.springframework.samples.petclinic.repository.VisitRepository;
 import org.springframework.samples.petclinic.repository.springdatajpa.SpringDataPetRepository;
@@ -46,14 +49,15 @@ public class ClinicServiceImpl implements ClinicService {
     private VetRepository vetRepository;
     private OwnerRepository ownerRepository;
     private VisitRepository visitRepository;
-    private SpringDataVisitRepository springDataVisitRepository;
+    private RoomRepository roomRepository;
 
     @Autowired
-    public ClinicServiceImpl(PetRepository petRepository, VetRepository vetRepository, OwnerRepository ownerRepository, VisitRepository visitRepository) {
+    public ClinicServiceImpl(PetRepository petRepository, VetRepository vetRepository, OwnerRepository ownerRepository, VisitRepository visitRepository,RoomRepository roomRepository) {
         this.petRepository = petRepository;
         this.vetRepository = vetRepository;
         this.ownerRepository = ownerRepository;
         this.visitRepository = visitRepository;
+        this.roomRepository = roomRepository;
     }
 
     @Override
@@ -76,6 +80,12 @@ public class ClinicServiceImpl implements ClinicService {
 
     @Override
     @Transactional(readOnly = true)
+    public Room findRoomById(int id) throws DataAccessException {
+        return roomRepository.findById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
     public Collection<Owner> findOwnerByLastName(String lastName) throws DataAccessException {
         return ownerRepository.findByLastName(lastName);
     }
@@ -91,6 +101,12 @@ public class ClinicServiceImpl implements ClinicService {
     @Transactional
     public void saveVisit(Visit visit) throws DataAccessException {
         visitRepository.save(visit);
+    }
+
+    @Override
+    @Transactional
+    public void saveRoom(Room room) throws DataAccessException {
+        roomRepository.save(room);
     }
 
 
@@ -122,6 +138,11 @@ public class ClinicServiceImpl implements ClinicService {
 	public Collection<Visit> findVisitsByPetId(int petId) {
 		return visitRepository.findByPetId(petId);
     }
+
+    @Override
+	public Collection<Room> findRoomsByPetId(int petId) {
+		return roomRepository.findByPetId(petId);
+    }
     
     @Override
     @Transactional
@@ -133,6 +154,12 @@ public class ClinicServiceImpl implements ClinicService {
     @Transactional
     public void deleteVisit(int visitId) throws DataAccessException {
     	this.visitRepository.deleteById(visitId);
+    }
+
+    @Override
+    @Transactional
+    public void deleteRoom(int roomId) throws DataAccessException {
+    	this.roomRepository.deleteById(roomId);
     }
 
     @Override
