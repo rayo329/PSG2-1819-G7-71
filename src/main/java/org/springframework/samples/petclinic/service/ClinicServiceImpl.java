@@ -106,12 +106,24 @@ public class ClinicServiceImpl implements ClinicService {
     public Pet findPetById(int id) throws DataAccessException {
         return petRepository.findById(id);
     }
+    
+//    @Override
+//    @Transactional(readOnly = true)
+//    public Specialty findSpecialtyById(int id) throws DataAccessException {
+//        return vetRepository.findByIdd(id);
+//    }
 
     @Override
     @Transactional
     public void savePet(Pet pet) throws DataAccessException {
         petRepository.save(pet);
     }
+    
+//    @Override
+//    @Transactional
+//    public void saveSpecialty(Specialty specialty) throws DataAccessException {
+//        vetRepository.savee(specialty);
+//    }
     
     @Override
     @Transactional

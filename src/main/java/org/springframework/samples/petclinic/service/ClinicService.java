@@ -38,6 +38,8 @@ public interface ClinicService {
     Owner findOwnerById(int id) throws DataAccessException;
     
     Vet findVetById(int id) throws DataAccessException;
+    
+//    Specialty findSpecialtyById(int id) throws DataAccessException;
 
     Pet findPetById(int id) throws DataAccessException;
 
@@ -59,6 +61,8 @@ public interface ClinicService {
 	
 	void saveVeterinarian(Vet veterinarian) throws DataAccessException;
 	
+//	void saveSpecialty(Specialty specialty) throws DataAccessException;
+
 	Collection<Specialty> findSpecialties() throws DataAccessException;
 
 }

@@ -34,9 +34,9 @@ import org.springframework.samples.petclinic.repository.VetRepository;
  */
 public interface SpringDataVetRepository extends VetRepository, Repository<Vet, Integer> {
 
-//
+
 //    @Override
-//    @Query("SELECT owner FROM Vet veterinarian WHERE veterinarian.id =:id")
+//    @Query("SELECT vet FROM Vet veterinarian WHERE veterinarian.id =:id")
 //    public Vet findById(@Param("id") int id);
 		
 	@Override

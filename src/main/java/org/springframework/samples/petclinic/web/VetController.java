@@ -71,16 +71,16 @@ public class VetController {
 //    public Vet findVet(@PathVariable("veterinarianId") int veterinarianId) {
 //        return this.clinicService.findVetById(veterinarianId);
 //    }
-//
-//    @InitBinder("veterinarian")
-//    public void initVetBinder(WebDataBinder dataBinder) {
-//        dataBinder.setDisallowedFields("id");
-//    }
-//    
-//    @InitBinder("specialty")
-//    public void initSpecialtyBinder(WebDataBinder dataBinder) {
-//        dataBinder.setValidator(new pet());
-//    }
+
+    @InitBinder("veterinarian")
+    public void initVetBinder(WebDataBinder dataBinder) {
+        dataBinder.setDisallowedFields("id");
+    }
+    
+    @InitBinder("specialty")
+    public void initSpecialtyBinder(WebDataBinder dataBinder) {
+        dataBinder.setValidator(new SpecialtyValidator());
+    }
     
     
     
@@ -106,7 +106,7 @@ public class VetController {
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
         } else {
         //	Specialty spec = new Specialty();
-        //	veterinarian.addSpecialty(spec);
+        	//veterinarian.addSpecialty(spec);
             this.clinicService.saveVeterinarian(veterinarian);
 //            return "redirect:/vets/" + veterinarian.getId();
             Map<String,Object> model = new HashMap<>();

@@ -11,11 +11,22 @@
         <c:if test="${veterinarian['new']}">New </c:if> Vet
     </h2>
     <form:form modelAttribute="veterinarian" class="form-horizontal" id="add-veterinarian-form">
+        <input type="hidden" name="id" value="${veterinarian.id}"/>
         <div class="form-group has-feedback">
+        
             <petclinic:inputField label="First Name" name="firstName"/>
             <petclinic:inputField label="Last Name" name="lastName"/>
-            <petclinic:inputField label="Specialties" name="specialties"/>
->
+            
+            <!-- funcionan los dos de abajo, pero con el none  -->
+            <!-- El multiple no lo reconoce como atributo  -->
+            <div class="control-group">
+                    <petclinic:selectField name="specialties"  label="Specialties" names="${specialties}"  size="5"/>
+            </div>
+            
+            <%-- <form:select multiple="true" path="specialties">
+   				 <form:options items="${specialties}" itemValue="name" itemLabel="name"/>
+			</form:select> --%>
+            
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
@@ -30,4 +41,5 @@
             </div>
         </div>
     </form:form>
+    
 </petclinic:layout>
