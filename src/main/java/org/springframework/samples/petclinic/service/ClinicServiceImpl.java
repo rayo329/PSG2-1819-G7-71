@@ -164,10 +164,22 @@ public class ClinicServiceImpl implements ClinicService {
     }
 
 
-    @Transactional
     @Override
+    @Transactional
     public void saveVet(Vet vet) throws DataAccessException {
         this.vetRepository.save(vet);
+    }
+
+    @Override
+    @Transactional
+    public void deleteOwner(Owner owner) throws DataAccessException {
+        this.ownerRepository.deleteById(owner.getId());
+    }
+
+    @Override
+    @Transactional
+    public void deleteVisit(int visitId) throws DataAccessException {
+        this.visitRepository.deleteById(visitId);
     }
 
 }

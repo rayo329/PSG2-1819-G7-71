@@ -63,6 +63,14 @@ public interface ClinicService {
 	
 //	void saveSpecialty(Specialty specialty) throws DataAccessException;
 
-	Collection<Specialty> findSpecialties() throws DataAccessException;
+    Collection<Specialty> findSpecialties() throws DataAccessException;
+    
+    void deleteVet(int vetId) throws DataAccessException;
+
+    void saveVet(Vet vet) throws DataAccessException;
+
+    void deleteOwner(Owner owner) throws DataAccessException;
+
+    void deleteVisit(int vetId) throws DataAccessException;
 
 }

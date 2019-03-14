@@ -15,8 +15,10 @@
  */
 package org.springframework.samples.petclinic.web;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -37,6 +39,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
@@ -101,15 +104,35 @@ public class VetController {
     }
     
     @RequestMapping(value = "/vets/new", method = RequestMethod.POST)
-    public String processCreationForm(@Valid Vet veterinarian, BindingResult result) {
-        if (result.hasErrors()) {
+    public String processCreationForm(@Valid Vet veterinarian, BindingResult result, @RequestParam(value="spec", required=false, defaultValue="none") String spec, ModelMap model) {
+        veterinarian.deleteSepecialities();
+        
+        if(!spec.equals("none")) {
+            String[] ss = spec.split(",");
+        List<String> selectedSpecs = new ArrayList<> ();
+        for(int i = 0; i < ss.length; i++) {
+            selectedSpecs.add(ss[i].trim());
+        }
+
+        List<Specialty> allSpecs = new ArrayList<Specialty> (this.clinicService.findSpecialties());
+
+        for(Specialty allSpec:allSpecs) {
+            for(String selectedSpec:selectedSpecs) {
+                if(allSpec.getName().equals(selectedSpec)) {
+                    veterinarian.addSpecialty(allSpec);
+                }
+            }
+        }
+        }
+
+        if (result.getAllErrors().size()>1) {
+            model.put("veterinarian", veterinarian);
             return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;
         } else {
         //	Specialty spec = new Specialty();
         	//veterinarian.addSpecialty(spec);
             this.clinicService.saveVeterinarian(veterinarian);
 //            return "redirect:/vets/" + veterinarian.getId();
-            Map<String,Object> model = new HashMap<>();
             Vets vets = new Vets();
             vets.getVetList().addAll(this.clinicService.findVets());
             model.put("vets",vets);

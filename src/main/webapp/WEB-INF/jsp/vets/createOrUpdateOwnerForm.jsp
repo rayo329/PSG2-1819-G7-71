@@ -17,15 +17,16 @@
             <petclinic:inputField label="First Name" name="firstName"/>
             <petclinic:inputField label="Last Name" name="lastName"/>
             
-            <!-- funcionan los dos de abajo, pero con el none  -->
-            <!-- El multiple no lo reconoce como atributo  -->
             <div class="control-group">
-                    <petclinic:selectField name="specialties"  label="Specialties" names="${specialties}"  size="5"/>
+                <label class="col-sm-2 control-label">Specialties</label>
+                <div class="col-sm-10">
+                <select name="spec" multiple="true" class="form-control">
+                    <c:forEach items="${specialties}" var="s">
+                        <option value="${s}"><c:out value="${s}"/></option>
+                    </c:forEach>
+                  </select>
+                </div>
             </div>
-            
-            <%-- <form:select multiple="true" path="specialties">
-   				 <form:options items="${specialties}" itemValue="name" itemLabel="name"/>
-			</form:select> --%>
             
         </div>
         <div class="form-group">
