@@ -19,6 +19,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
+import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 
@@ -44,7 +45,11 @@ public interface VetRepository {
     
     Vet findById(int id) throws DataAccessException;
     
+//    Specialty findByIdd(int id) throws DataAccessException;
+    
     void save(Vet veterinarian) throws DataAccessException;
+    
+//    void savee(Specialty specialty) throws DataAccessException;
 
 
 }
