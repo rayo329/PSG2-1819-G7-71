@@ -16,6 +16,35 @@
             <petclinic:inputField label="Last Name" name="lastName"/>
             <%-- quitando la  linea de abajo  se puede editar nombre y apellido--%>
             <petclinic:inputField label="Specialties" name="specialties"/>
+            
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+        		<table id="vetsTable" class="table table-striped">
+            		<thead>
+            			<tr>
+            				<th>Specialty</th>
+            				<th>Options</th>
+            			</tr>
+            		</thead>
+            		<tbody>
+            			<c:forEach var="specialty" items="${vet.specialties}">
+            				<tr>
+            					<th>
+                        			<c:out value="${specialty.name} "/>
+                        		</th>
+                        		<th>
+                        			<spring:url value="/vets/{vetId}/specialties/{spname}.html" var="vetUrl">
+                        				<spring:param name="vetId" value="${vet.id}"/>
+                        				<spring:param name="spname" value="${specialty.name}"/>
+                    				</spring:url>
+                    				<a href="${fn:escapeXml(vetUrl)}"><c:out value="Delete"/></a>
+                      			</th>
+                      		</tr>
+                    	</c:forEach>
+            		</tbody>
+            	</table>
+           </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">

@@ -23,10 +23,12 @@ import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
+import org.springframework.samples.petclinic.repository.SpecialtyRepository;
 import org.springframework.samples.petclinic.repository.VetRepository;
 import org.springframework.samples.petclinic.repository.VisitRepository;
 import org.springframework.stereotype.Service;
@@ -45,13 +47,15 @@ public class ClinicServiceImpl implements ClinicService {
     private VetRepository vetRepository;
     private OwnerRepository ownerRepository;
     private VisitRepository visitRepository;
+    private SpecialtyRepository specialtyRepository;
 
     @Autowired
-    public ClinicServiceImpl(PetRepository petRepository, VetRepository vetRepository, OwnerRepository ownerRepository, VisitRepository visitRepository) {
+    public ClinicServiceImpl(PetRepository petRepository, VetRepository vetRepository, OwnerRepository ownerRepository, VisitRepository visitRepository, SpecialtyRepository specialtyRepository) {
         this.petRepository = petRepository;
         this.vetRepository = vetRepository;
         this.ownerRepository = ownerRepository;
         this.visitRepository = visitRepository;
+        this.specialtyRepository = specialtyRepository;
     }
 
     @Override
@@ -119,6 +123,23 @@ public class ClinicServiceImpl implements ClinicService {
 	public Vet findVetById(int id) throws DataAccessException {
 		return vetRepository.findById(id);
 	}
+
+	@Override
+	public Collection<Specialty> findAllSpecialties() throws DataAccessException {
+		return this.specialtyRepository.findAll();
+	}
+
+	@Override
+	public Specialty saveSpecialty(Specialty specialty) throws DataAccessException {
+		return this.specialtyRepository.save(specialty);
+	}
+
+	@Override
+	public Specialty findSpecialtyById(int id) throws DataAccessException {
+		return this.specialtyRepository.findById(id);
+	}
+	
+
 
 
 

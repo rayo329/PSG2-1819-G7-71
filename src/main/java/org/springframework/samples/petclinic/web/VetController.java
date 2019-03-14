@@ -15,12 +15,13 @@
  */
 package org.springframework.samples.petclinic.web;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.samples.petclinic.model.Owner;
+import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Vets;
 import org.springframework.samples.petclinic.service.ClinicService;
@@ -109,8 +110,29 @@ public class VetController {
         } else {
             vet.setId(vetId);
             this.clinicService.saveVet(vet);
-            return "redirect:/vets/{vetId}";
+            return "redirect:/vets/{vetId}/";
         }
+    }
+    
+    @RequestMapping(value = "/vets/{vetId}/specialties/{spname}", method = RequestMethod.GET)
+    public String deleteSpecialty(@PathVariable("vetId") int vetId, @PathVariable("spname") String spname) {
+    	Vet vet = this.clinicService.findVetById(vetId);
+    	vet.setFirstName("TestSpecialties");
+    	if(vet != null) {
+    		//if(vet.getSpecialties().size() > 0)
+    		//	return "redirect:/vets/"+vet.getSpecialties().get(0).getId();
+    		vet.getSpecialties().remove(0);
+    		this.clinicService.saveVet(vet);
+    	}
+    	
+    		/*for(Specialty sp: vet.getSpecialties()) {
+    			if(sp.getName().equalsIgnoreCase(spname)) {
+    				vet.getSpecialties().remove(sp);
+    				this.clinicService.saveVet(vet);
+    				break;
+    			}
+    		}*/
+    	return "redirect:/vets/{vetId}";
     }
 
 
