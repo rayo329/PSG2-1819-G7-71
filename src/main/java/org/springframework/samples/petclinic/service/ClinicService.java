@@ -36,8 +36,14 @@ public interface ClinicService {
     Collection<PetType> findPetTypes() throws DataAccessException;
 
     Owner findOwnerById(int id) throws DataAccessException;
+    
+    Vet findVetById(int id) throws DataAccessException;
+    
+//    Specialty findSpecialtyById(int id) throws DataAccessException;
 
     Pet findPetById(int id) throws DataAccessException;
+
+    Visit findVisitById(int id) throws DataAccessException;
 
     void savePet(Pet pet) throws DataAccessException;
 
@@ -50,15 +56,21 @@ public interface ClinicService {
     Collection<Owner> findOwnerByLastName(String lastName) throws DataAccessException;
 
 	Collection<Visit> findVisitsByPetId(int petId);
+
+	void deletePet(Pet pet) throws DataAccessException;
 	
-	Vet findVetById(int id) throws DataAccessException;
+	void saveVeterinarian(Vet veterinarian) throws DataAccessException;
 	
-	void saveVet(Vet vet) throws DataAccessException;
-	
-	Collection<Specialty> findAllSpecialties() throws DataAccessException;
-	
-	Specialty findSpecialtyById(int id) throws DataAccessException;
-	
-	Specialty saveSpecialty(Specialty specialty) throws DataAccessException;
+//	void saveSpecialty(Specialty specialty) throws DataAccessException;
+
+    Collection<Specialty> findSpecialties() throws DataAccessException;
+    
+    void deleteVet(int vetId) throws DataAccessException;
+
+    void saveVet(Vet vet) throws DataAccessException;
+
+    void deleteOwner(Owner owner) throws DataAccessException;
+
+    void deleteVisit(int vetId) throws DataAccessException;
 
 }

@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="petclinic" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 
 <petclinic:layout pageName="owners">
@@ -54,12 +55,20 @@
             <tr>
                 <th>Date</th>
                 <th>Description</th>
+                <th>Action</th>
             </tr>
             <c:forEach var="visit" items="${visit.pet.visits}">
                 <c:if test="${!visit['new']}">
                     <tr>
                         <td><petclinic:localDate date="${visit.date}" pattern="yyyy/MM/dd"/></td>
                         <td><c:out value="${visit.description}"/></td>
+                        <td>
+                            <spring:url value="/pets/{petId}/visits/{visitId}/delete" var="deleteUrl">
+                                <spring:param name="visitId" value="${visit.id}"/>
+                                <spring:param name="petId" value="${petId}"/>
+                            </spring:url>
+                            <a href="${fn:escapeXml(deleteUrl)}">Delete</a>
+                        </td>
                     </tr>
                 </c:if>
             </c:forEach>

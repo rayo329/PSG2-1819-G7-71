@@ -24,6 +24,7 @@ import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.Visit;
 import org.springframework.samples.petclinic.service.ClinicService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -73,9 +74,24 @@ public class VisitController {
     }
 
     // Spring MVC calls method loadPetWithVisit(...) before initNewVisitForm is called
-    @RequestMapping(value = "/owners/*/pets/{petId}/visits/new", method = RequestMethod.GET)
+    @RequestMapping(value = "/owners/{ownerId}/pets/{petId}/visits/new", method = RequestMethod.GET)
     public String initNewVisitForm(@PathVariable("petId") int petId, Map<String, Object> model) {
+        model.put("petId", petId);
         return "pets/createOrUpdateVisitForm";
+    }
+
+    @RequestMapping(value = "/pets/{petId}/visits/{visitId}/delete", method = RequestMethod.GET)
+    public String initDeleteForm(@PathVariable("visitId") int visitId, @PathVariable("petId") int petId, ModelMap model) {
+        /*Visit visit = this.clinicService.findVisitById(visitId);
+        Pet pet = this.clinicService.findPetById(petId);
+
+        pet.deleteVisit(visit);
+        this.clinicService.savePet(pet);
+        */
+        
+        this.clinicService.deleteVisit(visitId);
+
+    	return "redirect:/owners/find";
     }
 
     // Spring MVC calls method loadPetWithVisit(...) before processNewVisitForm is called
