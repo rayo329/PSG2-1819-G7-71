@@ -31,8 +31,11 @@
                 <td>
                     <spring:url value="/vets/{vetId}/delete" var="deleteUrl">
                         <spring:param name="vetId" value="${vet.id}"/>
-                     </spring:url>
-                    <a href="${fn:escapeXml(deleteUrl)}">Delete</a>
+                    </spring:url>
+                    <spring:url value="/vets/{vetId}/edit" var="editUrl">
+                        <spring:param name="vetId" value="${vet.id}"/>
+                    </spring:url>
+                    <a href="${fn:escapeXml(deleteUrl)}">Delete</a> / <a href="${fn:escapeXml(editUrl)}">Edit</a>
                 </td>
             </tr>
         </c:forEach>
@@ -49,4 +52,7 @@
             </td>
         </tr>
     </table>
+    
+    <br/>
+    <a class="btn btn-default" href='<spring:url value="/vets/new" htmlEscape="true"/>'>Add Veterinarian</a>
 </petclinic:layout>
