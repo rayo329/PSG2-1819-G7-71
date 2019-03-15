@@ -19,6 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Room;
 import org.springframework.samples.petclinic.service.ClinicService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -29,6 +30,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -104,6 +106,13 @@ public class PetController {
         Owner owner = this.clinicService.findOwnerById(ownerId);
         
         owner.deletePet(pet);
+
+        Collection<Room> rooms = new ArrayList<> ();
+        rooms.addAll(this.clinicService.findRoomsByPetId(pet.getId()));
+        for(Room r:rooms) {
+            this.clinicService.deleteRoom(r.getId());
+        }
+
         this.clinicService.deletePet(pet);
        
         model.put("pet", pet);

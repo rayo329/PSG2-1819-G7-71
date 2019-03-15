@@ -16,11 +16,14 @@
 package org.springframework.samples.petclinic.service;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
+import org.springframework.samples.petclinic.model.Specialty;
+import org.springframework.samples.petclinic.model.Room;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
 
@@ -35,8 +38,14 @@ public interface ClinicService {
     Collection<PetType> findPetTypes() throws DataAccessException;
 
     Owner findOwnerById(int id) throws DataAccessException;
+    
+    Vet findVetById(int id) throws DataAccessException;
+    
+//    Specialty findSpecialtyById(int id) throws DataAccessException;
 
     Pet findPetById(int id) throws DataAccessException;
+
+    Visit findVisitById(int id) throws DataAccessException;
 
     void savePet(Pet pet) throws DataAccessException;
 
@@ -51,5 +60,27 @@ public interface ClinicService {
 	Collection<Visit> findVisitsByPetId(int petId);
 
 	void deletePet(Pet pet) throws DataAccessException;
+	
+	void saveVeterinarian(Vet veterinarian) throws DataAccessException;
+	
+//	void saveSpecialty(Specialty specialty) throws DataAccessException;
+
+    Collection<Specialty> findSpecialties() throws DataAccessException;
+    
+    void deleteVet(int vetId) throws DataAccessException;
+
+    void saveVet(Vet vet) throws DataAccessException;
+
+    void deleteOwner(Owner owner) throws DataAccessException;
+
+    void deleteVisit(int vetId) throws DataAccessException;
+    
+    Room findRoomById(int id) throws DataAccessException;
+
+    void saveRoom(Room room) throws DataAccessException;
+
+    Collection<Room> findRoomsByPetId(int petId);
+
+    void deleteRoom(int roomId) throws DataAccessException;
 
 }

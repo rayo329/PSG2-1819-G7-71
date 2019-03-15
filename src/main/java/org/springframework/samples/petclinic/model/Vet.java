@@ -21,6 +21,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
@@ -73,6 +74,14 @@ public class Vet extends Person {
 
     public void addSpecialty(Specialty specialty) {
         getSpecialtiesInternal().add(specialty);
+    }
+
+    public void deleteSepecialities() {
+        Set<Specialty> sp = this.getSpecialtiesInternal();
+        for(Specialty s:sp) {
+            sp.remove(s);
+        }
+        this.setSpecialtiesInternal(sp);
     }
 
 }

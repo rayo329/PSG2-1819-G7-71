@@ -30,6 +30,7 @@ import javax.persistence.Table;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
@@ -61,6 +62,10 @@ public class Pet extends NamedEntity {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet", fetch = FetchType.EAGER)
     private Set<Visit> visits;
 
+    /*
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pet", fetch = FetchType.EAGER)
+    private Set<Room> rooms;
+    */
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
@@ -97,6 +102,10 @@ public class Pet extends NamedEntity {
         this.visits = visits;
     }
 
+    public void setVisits(Set<Visit> visits) {
+        this.visits = visits;
+    }
+
     public List<Visit> getVisits() {
         List<Visit> sortedVisits = new ArrayList<>(getVisitsInternal());
         PropertyComparator.sort(sortedVisits, new MutableSortDefinition("date", false, false));
@@ -107,5 +116,41 @@ public class Pet extends NamedEntity {
         getVisitsInternal().add(visit);
         visit.setPet(this);
     }
+
+    public void deleteVisit(Visit visit) {
+        getVisitsInternal().remove(visit);
+    }
+
+    /*
+    protected Set<Room> getRoomsInternal() {
+        if (this.rooms == null) {
+            this.rooms = new HashSet<>();
+        }
+        return this.rooms;
+    }
+
+    protected void setRoomsInternal(Set<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+    public void setRooms(Set<Room> rooms) {
+        this.rooms = rooms;
+    }
+
+    public List<Room> getRooms() {
+        List<Room> sortedRooms = new ArrayList<>(getRoomsInternal());
+        PropertyComparator.sort(sortedRooms, new MutableSortDefinition("date", false, false));
+        return Collections.unmodifiableList(sortedRooms);
+    }
+
+    public void addRoom(Room room) {
+        getRoomsInternal().add(room);
+        room.setPet(this);
+    }
+
+    public void deleteRoom(Room room) {
+        getRoomsInternal().remove(room);
+    }
+    */
 
 }
