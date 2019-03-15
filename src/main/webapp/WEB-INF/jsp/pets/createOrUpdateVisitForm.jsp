@@ -15,16 +15,16 @@
         </script>
     </jsp:attribute>
     <jsp:body>
-        <h2><c:if test="${visit['new']}">New </c:if>Visit</h2>
+        <h2><c:if test="${visit['new']}">Nueva </c:if>Visita</h2>
 
-        <b>Pet</b>
+        <b>Mascota</b>
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Birth Date</th>
-                <th>Type</th>
-                <th>Owner</th>
+                <th>Nombre</th>
+                <th>Fecha de nacimiento</th>
+                <th>Tipo</th>
+                <th>Mascota</th>
             </tr>
             </thead>
             <tr>
@@ -37,25 +37,25 @@
 
         <form:form modelAttribute="visit" class="form-horizontal">
             <div class="form-group has-feedback">
-                <petclinic:inputField label="Date" name="date"/>
-                <petclinic:inputField label="Description" name="description"/>
+                <petclinic:inputField label="Fecha" name="date"/>
+                <petclinic:inputField label="Descripcion" name="description"/>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <input type="hidden" name="petId" value="${visit.pet.id}"/>
-                    <button class="btn btn-default" type="submit">Add Visit</button>
+                    <button class="btn btn-default" type="submit">A&ntildeadir visita</button>
                 </div>
             </div>
         </form:form>
 
         <br/>
-        <b>Previous Visits</b>
+        <b>Visitas anteriores</b>
         <table class="table table-striped">
             <tr>
-                <th>Date</th>
-                <th>Description</th>
-                <th>Action</th>
+                <th>Fecha</th>
+                <th>Descripcion</th>
+                <th>Accion</th>
             </tr>
             <c:forEach var="visit" items="${visit.pet.visits}">
                 <c:if test="${!visit['new']}">
@@ -67,7 +67,7 @@
                                 <spring:param name="visitId" value="${visit.id}"/>
                                 <spring:param name="petId" value="${petId}"/>
                             </spring:url>
-                            <a href="${fn:escapeXml(deleteUrl)}">Delete</a>
+                            <a href="${fn:escapeXml(deleteUrl)}">Eliminar</a>
                         </td>
                     </tr>
                 </c:if>

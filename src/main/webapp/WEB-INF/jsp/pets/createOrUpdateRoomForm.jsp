@@ -15,16 +15,16 @@
     </jsp:attribute>
 
     <jsp:body>
-        <h2><c:if test="${room['new']}">New Room</c:if></h2>
+        <h2><c:if test="${room['new']}">Nueva habitacion</c:if></h2>
 
-        <b>Pet</b>
+        <b>Mascota</b>
         <table class="table table-striped">
             <thead>
             <tr>
-                <th>Name</th>
-                <th>Birth Date</th>
-                <th>Type</th>
-                <th>Owner</th>
+                <th>Nombre</th>
+                <th>Fecha de nacimiento</th>
+                <th>Tipo</th>
+                <th>Due&ntildeo</th>
             </tr>
             </thead>
             <tr>
@@ -37,25 +37,25 @@
 
         <form:form modelAttribute="room" class="form-horizontal">
             <div class="form-group has-feedback">
-                <petclinic:inputField label="Start date" name="start"/>
-                <petclinic:inputField label="End date" name="end"/>
+                <petclinic:inputField label="Comienzo" name="start"/>
+                <petclinic:inputField label="Fin" name="end"/>
             </div>
 
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <input type="hidden" name="petId" value="${petId}"/>
-                    <button class="btn btn-default" type="submit">Add Room</button>
+                    <button class="btn btn-default" type="submit">A&ntildeadir habitacion</button>
                 </div>
             </div>
         </form:form>
         
          <br/>
         
-        <b> Previous rooms</b>
+        <b>Habitaciones anteriores</b>
         <table class="table table-striped">
         	<tr>
-        		<th>Start date</th>
-        		<th>End date</th>
+        		<th>Comienzo</th>
+        		<th>Fin</th>
         	</tr>
         	
         	<c:forEach var="roomPet" items="${roomsPet}">
