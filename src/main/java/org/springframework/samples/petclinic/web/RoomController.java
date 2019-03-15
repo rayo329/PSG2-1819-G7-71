@@ -77,10 +77,13 @@ public class RoomController {
         Room room = new Room();
 
         Pet pet = this.clinicService.findPetById(petId);
+        
+        Collection<Room> roomsPet = this.clinicService.findRoomsByPetId(petId);
 
         model.put("pet", pet);
         model.put("petId", petId);
         model.put("room", room);
+        model.put("roomsPet", roomsPet);
  
         return "pets/createOrUpdateRoomForm";
     }
@@ -88,11 +91,14 @@ public class RoomController {
     @RequestMapping(value = "/owners/{ownerId}/pets/{petId}/rooms/new", method = RequestMethod.POST)
     public String processNewRoomForm(@Valid Room room, BindingResult result, @RequestParam int petId, Map<String, Object> model) {
         Pet pet = this.clinicService.findPetById(petId);
+        
+        Collection<Room> roomsPet = this.clinicService.findRoomsByPetId(petId);
 
         if(result.getAllErrors().size()>1) {
             model.put("pet", pet);
             model.put("petId", petId);
             model.put("room", room);
+            model.put("roomsPet", roomsPet);
  
             return "pets/createOrUpdateRoomForm";
         } else {
