@@ -6,14 +6,14 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <petclinic:layout pageName="vets">
-    <h2>Veterinarians</h2>
+    <h2>Veterinarios</h2>
 
     <table id="vetsTable" class="table table-striped">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Specialties</th>
-            <th>Action</th>
+            <th>Nombre</th>
+            <th>Especialidades</th>
+            <th>Accion</th>
         </tr>
         </thead>
         <tbody>
@@ -26,7 +26,7 @@
                     <c:forEach var="specialty" items="${vet.specialties}">
                         <c:out value="${specialty.name} "/>
                     </c:forEach>
-                    <c:if test="${vet.nrOfSpecialties == 0}">none</c:if>
+                    <c:if test="${vet.nrOfSpecialties == 0}">ninguna</c:if>
                 </td>
                 <td>
                     <spring:url value="/vets/{vetId}/delete" var="deleteUrl">
@@ -35,7 +35,7 @@
                     <spring:url value="/vets/{vetId}/edit" var="editUrl">
                         <spring:param name="vetId" value="${vet.id}"/>
                     </spring:url>
-                    <a href="${fn:escapeXml(deleteUrl)}">Delete</a> / <a href="${fn:escapeXml(editUrl)}">Edit</a>
+                    <a href="${fn:escapeXml(deleteUrl)}">Eliminar</a> / <a href="${fn:escapeXml(editUrl)}">Editar</a>
                 </td>
             </tr>
         </c:forEach>
@@ -54,5 +54,5 @@
     </table>
     
     <br/>
-    <a class="btn btn-default" href='<spring:url value="/vets/new" htmlEscape="true"/>'>Add Veterinarian</a>
+    <a class="btn btn-default" href='<spring:url value="/vets/new" htmlEscape="true"/>'>A&ntildeadir veterinario</a>
 </petclinic:layout>
