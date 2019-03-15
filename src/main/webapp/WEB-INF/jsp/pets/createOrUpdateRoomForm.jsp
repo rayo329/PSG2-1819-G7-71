@@ -60,12 +60,14 @@
         	
         	<c:forEach var="roomPet" items="${roomsPet}">
         		<tr>
+        		
         			<td>
         			<petclinic:localDate date="${roomPet.start}" pattern="yyyy/MM/dd"/>
         			</td>
         			<td>
         			<petclinic:localDate date="${roomPet.end}" pattern="yyyy/MM/dd"/>
         			</td>
+        			
         		</tr>
         	</c:forEach>
         </table>
