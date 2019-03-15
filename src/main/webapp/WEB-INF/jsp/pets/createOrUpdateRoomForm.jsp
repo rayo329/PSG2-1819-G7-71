@@ -48,6 +48,27 @@
                 </div>
             </div>
         </form:form>
+        
+         <br/>
+        
+        <b> Previous rooms</b>
+        <table class="table table-striped">
+        	<tr>
+        		<th>Start date</th>
+        		<th>End date</th>
+        	</tr>
+        	
+        	<c:forEach var="roomPet" items="${roomsPet}">
+        		<tr>
+        			<td>
+        			<petclinic:localDate date="${roomPet.start}" pattern="yyyy/MM/dd"/>
+        			</td>
+        			<td>
+        			<petclinic:localDate date="${roomPet.end}" pattern="yyyy/MM/dd"/>
+        			</td>
+        		</tr>
+        	</c:forEach>
+        </table>
 
     </jsp:body>
 
