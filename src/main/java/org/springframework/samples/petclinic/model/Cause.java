@@ -9,6 +9,7 @@ import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -21,7 +22,7 @@ import org.springframework.beans.support.PropertyComparator;
 
 @Entity
 @Table(name = "causes")
-public class Cause extends BaseEntity{
+public class Cause extends BaseEntity {
 	
 	@NotEmpty
 	@Column(name = "name_cause")
@@ -39,13 +40,17 @@ public class Cause extends BaseEntity{
 	@Column(name = "organization_name")
 	private String organizationName;
 	
+	/*
 	@ManyToOne
 	@Column(name = "cause_id")
 	private Cause cause;
+	 */
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "cause")
+	 /*
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "cause", fetch = FetchType.EAGER)
 	@Column (name = "donations")
 	private Set<Donation> donations; 
+	*/ 
 	
 	public Cause() {
 		
@@ -83,13 +88,16 @@ public class Cause extends BaseEntity{
 		this.organizationName = organizationName;
 	}
 	
+	/*
 	public Cause getCause() {
-		return this.cause;
+		return this.get;
 	}
 	public void setCause(Cause cause) {
 		this.cause = cause;
 	}
+	*/
 	
+	/*
 	protected Set<Donation> getDonationsInternal(){
 		if(this.donations == null) {
 			this.donations = new HashSet<>();
@@ -106,4 +114,5 @@ public class Cause extends BaseEntity{
 		PropertyComparator.sort(sortedDonations, new MutableSortDefinition("name",true,true));
 		return Collections.unmodifiableList(sortedDonations);
 	}
+	*/
 }

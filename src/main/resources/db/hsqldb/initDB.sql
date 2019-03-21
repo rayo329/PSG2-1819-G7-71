@@ -48,14 +48,16 @@ CREATE TABLE causes (
   name_cause VARCHAR(255),
   description_cause VARCHAR(400),
   budgetTarget DOUBLE,
-  organization_name VARCHAR(50),
-  donations  DOUBLE NOT NULL
+  organization_name VARCHAR(50)
  );
- ALTER TABLE causes ADD CONSTRAINT fk_causes_donations FOREIGN KEY (donations) REFERENCES donations (donations);
  
  CREATE TABLE donations(
-  donation   DOUBLE
+  id		 INTEGER IDENTITY PRIMARY KEY,
+  cause_id INTEGER NOT NULL,
+  amountDonation DOUBLE
  );
+ALTER TABLE donations ADD CONSTRAINT fk_donations_causes FOREIGN KEY (cause_id) REFERENCES causes (id);
+CREATE INDEX donations_cause_id ON donations (cause_id);
 
 CREATE TABLE pets (
   id         INTEGER IDENTITY PRIMARY KEY,
