@@ -1,0 +1,4 @@
+org\springframework\samples\petclinic\model\Room.class
+org\springframework\samples\petclinic\repository\RoomRepository.class
+org\springframework\samples\petclinic\repository\springdatajpa\SpringDataRoomRepository.class
+org\springframework\samples\petclinic\web\RoomController.class

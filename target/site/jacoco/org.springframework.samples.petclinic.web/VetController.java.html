@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VetController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">petclinic</a> &gt; <a href="index.source.html" class="el_package">org.springframework.samples.petclinic.web</a> &gt; <span class="el_source">VetController.java</span></div><h1>VetController.java</h1><pre class="source lang-java linenums">/*
+ * Copyright 2002-2013 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.springframework.samples.petclinic.web;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.samples.petclinic.model.Specialty;
+import org.springframework.samples.petclinic.model.Vet;
+import org.springframework.samples.petclinic.model.Vets;
+import org.springframework.samples.petclinic.service.ClinicService;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+/**
+ * @author Juergen Hoeller
+ * @author Mark Fisher
+ * @author Ken Krebs
+ * @author Arjen Poutsma
+ */
+@Controller
+public class VetController {
+
+	private static final String VIEWS_OWNER_CREATE_OR_UPDATE_FORM = &quot;vets/createOrUpdateOwnerForm&quot;;
+	private final ClinicService clinicService;
+
+	@Autowired
+<span class="fc" id="L55">	public VetController(ClinicService clinicService) {</span>
+<span class="fc" id="L56">		this.clinicService = clinicService;</span>
+<span class="fc" id="L57">	}</span>
+
+	@InitBinder
+	public void setAllowedFields(WebDataBinder dataBinder) {
+<span class="fc" id="L61">		dataBinder.setDisallowedFields(&quot;id&quot;);</span>
+<span class="fc" id="L62">	}</span>
+
+
+	@ModelAttribute(&quot;specialties&quot;)
+	public Collection&lt;Specialty&gt; populateSpecialties() {
+<span class="fc" id="L67">		return this.clinicService.findSpecialties();</span>
+	}
+
+
+
+	@RequestMapping(value = &quot;/vets/new&quot;, method = RequestMethod.GET)
+	public String initCreationForm(Map&lt;String, Object&gt; model) {
+		//Specialty spec = new Specialty();
+<span class="nc" id="L75">		Vet veterinarian = new Vet();</span>
+		//    veterinarian.addSpecialty(spec);
+<span class="nc" id="L77">		model.put(&quot;veterinarian&quot;, veterinarian);</span>
+<span class="nc" id="L78">		return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;</span>
+	}
+
+	@RequestMapping(value = &quot;/vets/{vetId}/edit&quot;, method = RequestMethod.GET)
+	public String initEditForm(@PathVariable(&quot;vetId&quot;) int vetId, ModelMap model) {
+<span class="nc" id="L83">		Vet veterinarian = this.clinicService.findVetById(vetId);</span>
+
+<span class="nc" id="L85">		model.put(&quot;veterinarian&quot;, veterinarian);</span>
+<span class="nc" id="L86">		return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;</span>
+	}
+
+	@RequestMapping(value = &quot;/vets/new&quot;, method = RequestMethod.POST)
+	public String processCreationForm(@Valid Vet veterinarian, BindingResult result, @RequestParam(value=&quot;spec&quot;, required=false, defaultValue=&quot;none&quot;) String spec, ModelMap model) {
+<span class="nc" id="L91">		veterinarian.deleteSepecialities();</span>
+
+<span class="nc bnc" id="L93" title="All 2 branches missed.">		if(!spec.equals(&quot;none&quot;)) {</span>
+<span class="nc" id="L94">			String[] ss = spec.split(&quot;,&quot;);</span>
+<span class="nc" id="L95">			List&lt;String&gt; selectedSpecs = new ArrayList&lt;&gt; ();</span>
+<span class="nc bnc" id="L96" title="All 2 branches missed.">			for(int i = 0; i &lt; ss.length; i++) {</span>
+<span class="nc" id="L97">				selectedSpecs.add(ss[i].trim());</span>
+			}
+
+<span class="nc" id="L100">			List&lt;Specialty&gt; allSpecs = new ArrayList&lt;Specialty&gt; (this.clinicService.findSpecialties());</span>
+
+<span class="nc bnc" id="L102" title="All 2 branches missed.">			for(Specialty allSpec:allSpecs) {</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">				for(String selectedSpec:selectedSpecs) {</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">					if(allSpec.getName().equals(selectedSpec)) {</span>
+<span class="nc" id="L105">						veterinarian.addSpecialty(allSpec);</span>
+					}
+<span class="nc" id="L107">				}</span>
+<span class="nc" id="L108">			}</span>
+		}
+
+<span class="nc bnc" id="L111" title="All 2 branches missed.">		if (result.getAllErrors().size()&gt;1) {</span>
+<span class="nc" id="L112">			model.put(&quot;veterinarian&quot;, veterinarian);</span>
+<span class="nc" id="L113">			return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;</span>
+		} else {
+			//	Specialty spec = new Specialty();
+			//veterinarian.addSpecialty(spec);
+<span class="nc" id="L117">			this.clinicService.saveVet(veterinarian);</span>
+			//            return &quot;redirect:/vets/&quot; + veterinarian.getId();
+<span class="nc" id="L119">			Vets vets = new Vets();</span>
+<span class="nc" id="L120">			vets.getVetList().addAll(this.clinicService.findVets());</span>
+<span class="nc" id="L121">			model.put(&quot;vets&quot;,vets);</span>
+<span class="nc" id="L122">			return &quot;vets/vetList&quot;;</span>
+		}
+	}
+
+	@RequestMapping(value = &quot;/vets/{vetId}/edit&quot;, method = RequestMethod.POST)
+	public String processUpdateOwnerForm(@Valid Vet vet, BindingResult result, @PathVariable(&quot;vetId&quot;) int vetId, @RequestParam(value=&quot;spec&quot;, required=false, defaultValue=&quot;none&quot;) String spec) {
+<span class="nc bnc" id="L128" title="All 2 branches missed.">		if (result.hasErrors()) {</span>
+<span class="nc" id="L129">			return VIEWS_OWNER_CREATE_OR_UPDATE_FORM;</span>
+		} else {
+			
+<span class="nc bnc" id="L132" title="All 2 branches missed.">			if(!spec.equals(&quot;none&quot;)) {</span>
+<span class="nc" id="L133">				String[] ss = spec.split(&quot;,&quot;);</span>
+<span class="nc" id="L134">				List&lt;String&gt; selectedSpecs = new ArrayList&lt;&gt; ();</span>
+<span class="nc bnc" id="L135" title="All 2 branches missed.">				for(int i = 0; i &lt; ss.length; i++) {</span>
+<span class="nc" id="L136">					selectedSpecs.add(ss[i].trim());</span>
+				}
+
+<span class="nc" id="L139">				List&lt;Specialty&gt; allSpecs = new ArrayList&lt;Specialty&gt; (this.clinicService.findSpecialties());</span>
+
+<span class="nc bnc" id="L141" title="All 2 branches missed.">				for(Specialty allSpec:allSpecs) {</span>
+<span class="nc bnc" id="L142" title="All 2 branches missed.">					for(String selectedSpec:selectedSpecs) {</span>
+<span class="nc bnc" id="L143" title="All 2 branches missed.">						if(allSpec.getName().equals(selectedSpec)) {</span>
+<span class="nc" id="L144">							vet.addSpecialty(allSpec);</span>
+						}
+<span class="nc" id="L146">					}</span>
+<span class="nc" id="L147">				}</span>
+			}
+			
+<span class="nc" id="L150">			vet.setId(vetId);</span>
+<span class="nc" id="L151">			this.clinicService.saveVet(vet);</span>
+<span class="nc" id="L152">			return &quot;redirect:/vets.html&quot;;</span>
+		}
+	}
+
+	@RequestMapping(value = { &quot;/vets.html&quot;})
+	public String showVetList(Map&lt;String, Object&gt; model) {
+		// Here we are returning an object of type 'Vets' rather than a collection of Vet objects
+		// so it is simpler for Object-Xml mapping
+<span class="fc" id="L160">		Vets vets = new Vets();</span>
+<span class="fc" id="L161">		vets.getVetList().addAll(this.clinicService.findVets());</span>
+<span class="fc" id="L162">		model.put(&quot;vets&quot;, vets);</span>
+<span class="fc" id="L163">		return &quot;vets/vetList&quot;;</span>
+	}
+
+	@RequestMapping(value = { &quot;/vets.json&quot;, &quot;/vets.xml&quot;})
+	public
+	@ResponseBody
+	Vets showResourcesVetList() {
+		// Here we are returning an object of type 'Vets' rather than a collection of Vet objects
+		// so it is simpler for JSon/Object mapping
+<span class="fc" id="L172">		Vets vets = new Vets();</span>
+<span class="fc" id="L173">		vets.getVetList().addAll(this.clinicService.findVets());</span>
+<span class="fc" id="L174">		return vets;</span>
+	}
+
+	@RequestMapping(value = &quot;/vets/{vetId}/delete&quot;, method = RequestMethod.GET)
+	public String initDeleteForm(@PathVariable(&quot;vetId&quot;) int vetId, ModelMap model) {
+<span class="nc" id="L179">		this.clinicService.deleteVet(vetId);</span>
+
+<span class="nc" id="L181">		return &quot;redirect:/vets.html&quot;;</span>
+	}
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.1.201803210924</span></div></body></html>

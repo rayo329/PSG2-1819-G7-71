@@ -1,0 +1,613 @@
+# Created at 2019-03-12T12:59:41.196
+TestSet has not finished before stream error has appeared >> initializing exit by non-null configuration: null
+java.io.EOFException
+	at java.io.DataInputStream.readInt(DataInputStream.java:392)
+	at org.apache.maven.surefire.booter.MasterProcessCommand.decode(MasterProcessCommand.java:115)
+	at org.apache.maven.surefire.booter.CommandReader$CommandRunnable.run(CommandReader.java:391)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+# Created at 2019-03-12T12:59:42.317
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.CrashControllerTests,testTriggerException,null,null,null
+
+
+# Created at 2019-03-12T12:59:42.388
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:42.388
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:42.388
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:42.451
+Unexpected IOException with stream: WARN  warn - Resolved [java.lang.RuntimeException: Expected: controller used to showcase what happens when an exception is thrown]
+
+
+# Created at 2019-03-12T12:59:42.467
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.CrashControllerTests,testTriggerException,null,null,null
+
+
+# Created at 2019-03-12T12:59:42.483
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.CrashControllerTests,null,null,null
+
+
+# Created at 2019-03-12T12:59:42.483
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.OwnerControllerTests,null,null,null
+
+
+# Created at 2019-03-12T12:59:42.498
+Unexpected IOException with stream: INFO  WebTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+
+
+# Created at 2019-03-12T12:59:42.498
+Unexpected IOException with stream: INFO  WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@535ada97, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2bf8a046, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1888f36e, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1a6cd38f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1fe73c37, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@71f3551d]
+
+
+# Created at 2019-03-12T12:59:42.746
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessUpdateOwnerFormHasErrors,null,null,null
+
+
+# Created at 2019-03-12T12:59:42.762
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:42.778
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:42.778
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:42.865
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessUpdateOwnerFormHasErrors,null,null,null
+
+
+# Created at 2019-03-12T12:59:42.885
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessCreationFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:42.905
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:42.905
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:42.922
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:42.953
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessCreationFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:42.953
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testInitFindForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:42.984
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:42.984
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.000
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.000
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testInitFindForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.016
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testShowOwner,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.031
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.047
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.047
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.083
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testShowOwner,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.083
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testInitUpdateOwnerForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.114
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.114
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.129
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.129
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testInitUpdateOwnerForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.145
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testInitCreationForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.176
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.176
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.194
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 2 ms
+
+
+# Created at 2019-03-12T12:59:43.206
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testInitCreationForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.214
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessFindFormByLastName,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.230
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.246
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.246
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.262
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessFindFormByLastName,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.277
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessFindFormNoOwnersFound,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.305
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.309
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.317
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.325
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessFindFormNoOwnersFound,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.333
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessFindFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.349
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.365
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.365
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.384
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessFindFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.391
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessUpdateOwnerFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.409
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.425
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.425
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.456
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessUpdateOwnerFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.456
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessCreationFormHasErrors,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.502
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.511
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.515
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.542
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.OwnerControllerTests,testProcessCreationFormHasErrors,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.550
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.OwnerControllerTests,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.562
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.PetControllerTests,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.574
+Unexpected IOException with stream: INFO  WebTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+
+
+# Created at 2019-03-12T12:59:43.578
+Unexpected IOException with stream: INFO  WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3460488a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@222b076c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@129d1417, org.springframework.test.context.support.DirtiesContextTestExecutionListener@74ab74b9, org.springframework.test.context.transaction.TransactionalTestExecutionListener@42b946be, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@385339e2]
+
+
+# Created at 2019-03-12T12:59:43.582
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.PetControllerTests,testProcessCreationFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.615
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.630
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.630
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.661
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.PetControllerTests,testProcessCreationFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.661
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.PetControllerTests,testProcessUpdateFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.693
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.699
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.707
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.715
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.PetControllerTests,testProcessUpdateFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.731
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.PetControllerTests,testInitUpdateForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.747
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.747
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.762
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.762
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.PetControllerTests,testInitUpdateForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.780
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.PetControllerTests,testInitCreationForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.795
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.811
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.811
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.826
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.PetControllerTests,testInitCreationForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.826
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.PetControllerTests,testProcessCreationFormHasErrors,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.858
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.858
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.858
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.873
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.PetControllerTests,testProcessCreationFormHasErrors,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.889
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.PetControllerTests,testProcessUpdateFormHasErrors,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.906
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:43.906
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:43.921
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:43.937
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.PetControllerTests,testProcessUpdateFormHasErrors,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.937
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.PetControllerTests,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.953
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.PetTypeFormatterTests,null,null,null
+
+
+# Created at 2019-03-12T12:59:43.953
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.PetTypeFormatterTests,shouldThrowParseException,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.015
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.PetTypeFormatterTests,shouldThrowParseException,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.031
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.PetTypeFormatterTests,testPrint,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.031
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.PetTypeFormatterTests,testPrint,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.046
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.PetTypeFormatterTests,shouldParse,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.046
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.PetTypeFormatterTests,shouldParse,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.062
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.PetTypeFormatterTests,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.062
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.VetControllerTests,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.081
+Unexpected IOException with stream: INFO  WebTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+
+
+# Created at 2019-03-12T12:59:44.081
+Unexpected IOException with stream: INFO  WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@16d1940f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@46cc76de, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@58328a6, org.springframework.test.context.support.DirtiesContextTestExecutionListener@184e6e74, org.springframework.test.context.transaction.TransactionalTestExecutionListener@2a5e09e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@277a1c92]
+
+
+# Created at 2019-03-12T12:59:44.097
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.VetControllerTests,testShowVetListXml,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.112
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:44.112
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:44.131
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 1 ms
+
+
+# Created at 2019-03-12T12:59:44.232
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.VetControllerTests,testShowVetListXml,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.232
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.VetControllerTests,testShowVetListHtml,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.248
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:44.264
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:44.264
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:44.279
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.VetControllerTests,testShowVetListHtml,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.279
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.VetControllerTests,testShowResourcesVetList,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.296
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:44.312
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:44.312
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:44.421
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.VetControllerTests,testShowResourcesVetList,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.421
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.VetControllerTests,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.437
+Unexpected IOException: 1,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.VisitControllerTests,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.437
+Unexpected IOException with stream: INFO  WebTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+
+
+# Created at 2019-03-12T12:59:44.452
+Unexpected IOException with stream: INFO  WebTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@21bfaad6, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@4fa4e10c, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@6a78f39c, org.springframework.test.context.support.DirtiesContextTestExecutionListener@41e5f5c4, org.springframework.test.context.transaction.TransactionalTestExecutionListener@1dd00e34, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@75143003]
+
+
+# Created at 2019-03-12T12:59:44.452
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.VisitControllerTests,testProcessNewVisitFormHasErrors,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.470
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:44.486
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:44.486
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:44.501
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.VisitControllerTests,testProcessNewVisitFormHasErrors,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.501
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.VisitControllerTests,testProcessNewVisitFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.532
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:44.532
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:44.548
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:44.566
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.VisitControllerTests,testProcessNewVisitFormSuccess,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.580
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.VisitControllerTests,testShowVisits,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.602
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:44.602
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:44.617
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:44.617
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.VisitControllerTests,testShowVisits,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.633
+Unexpected IOException: 5,1,org.springframework.samples.petclinic.web.VisitControllerTests,testInitNewVisitForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.648
+Unexpected IOException with stream: INFO  MockServletContext - Initializing Spring TestDispatcherServlet ''
+
+
+# Created at 2019-03-12T12:59:44.664
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Initializing Servlet ''
+
+
+# Created at 2019-03-12T12:59:44.664
+Unexpected IOException with stream: INFO  TestDispatcherServlet - Completed initialization in 0 ms
+
+
+# Created at 2019-03-12T12:59:44.680
+Unexpected IOException: 6,1,org.springframework.samples.petclinic.web.VisitControllerTests,testInitNewVisitForm,null,null,null
+
+
+# Created at 2019-03-12T12:59:44.680
+Unexpected IOException: 2,1,org.apache.maven.surefire.junitplatform.JUnitPlatformProvider,org.springframework.samples.petclinic.web.VisitControllerTests,null,null,null
+
+
