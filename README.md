@@ -30,6 +30,6 @@ In the retrospective meeting, the team has a discussion about those results.
 | ------------- | ----------- | ------ | --------- | ------- | ------------- | -------- |
 | Day 1 (21/03) |             |        | :worried: | -       |               |          |
 | Day 2         |             |        |           | -       |               |          |
-| Day 3         |             |        |           |         |               |          |
+| Day 3         |             |        |           | -       |               |          |
 | Day 4         |             |        |           |         |               |          |
 ...
