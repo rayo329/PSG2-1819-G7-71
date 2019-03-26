@@ -91,7 +91,7 @@ public class RoomController {
     @RequestMapping(value = "/owners/{ownerId}/pets/{petId}/rooms/new", method = RequestMethod.POST)
     public String processNewRoomForm(@Valid Room room, BindingResult result, @RequestParam int petId, Map<String, Object> model) {
         Pet pet = this.clinicService.findPetById(petId);
-        
+        Collection<Room> listaDeTodasLasRooms = this.clinicService.findAllRooms();
         Collection<Room> roomsPet = this.clinicService.findRoomsByPetId(petId);
 
         if(result.getAllErrors().size()>1) {
@@ -102,10 +102,25 @@ public class RoomController {
  
             return "pets/createOrUpdateRoomForm";
         } else {
-            room.setPet(pet);
+        	
+        	try {
+        		for (Room r: listaDeTodasLasRooms) {
+        			if(r.getStart().equals(room.getStart()) || r.getEnd().equals(room.getEnd())) {
+        				 throw new IllegalArgumentException("Ya tenemos esa fecha escogida");
+        			}
+        		}
+                room.setPet(pet);
+                this.clinicService.saveRoom(room);
+                return "redirect:/owners";
+        	}catch(Throwable oops) {
+        		model.put("pet", pet);
+                model.put("petId", petId);
+                model.put("room", room);
+                model.put("roomsPet", roomsPet);
+                
+                return "pets/createOrUpdateRoomForm";
+        	}
 
-            this.clinicService.saveRoom(room);
-            return "redirect:/owners";
         }
     }
 
