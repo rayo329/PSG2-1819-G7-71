@@ -31,7 +31,7 @@ In the retrospective meeting, the team has a discussion about those results.
 | Day 1 (21/03)  |     -       |        | :worried: | -       |               |          |
 | Day 2 (22/03)  |     -       |        | -         | -       |               |          |
 | Day 3 (23/03)  |     -       |        | -         | -       |               |          |
-| Day 4 (25/03)  |  :worried:  |        |           | -       |               |          |
+| Day 4 (25/03)  |  :worried:  |        | -         | -       |               |          |
 | Day 5 (26/03)  |             |        |           | -       |               |          |
 | Day 6 (27/03)  |             |        |           |         |               |          |
 | Day 7 (28/03)  |             |        |           |         |               |          |
