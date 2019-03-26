@@ -10,6 +10,7 @@
     <h2>
         Nueva Causa
     </h2>
+    
     <form:form modelAttribute="cause" class="form-horizontal" id="add-cause-form">
         <input type="hidden" name="id" value="${cause.id}"/>
         <div class="form-group has-feedback">
