@@ -19,6 +19,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
+import org.springframework.samples.petclinic.model.Cause;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
@@ -83,4 +84,11 @@ public interface ClinicService {
 
     void deleteRoom(int roomId) throws DataAccessException;
 
+    Cause findCauseById(int causeId) throws DataAccessException;
+
+    void saveCause(Cause cause) throws DataAccessException;
+    
+    void deleteCauseById(int causeId) throws DataAccessException;
+
+    Collection<Cause> findAllCauses() throws DataAccessException;
 }

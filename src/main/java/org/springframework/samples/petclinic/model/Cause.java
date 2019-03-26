@@ -14,6 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlElement;
 
 import org.springframework.beans.support.MutableSortDefinition;
@@ -32,7 +33,7 @@ public class Cause extends BaseEntity {
 	@Column(name= "description_cause")
 	private String description;
 	
-	@NotEmpty
+	@NotNull
 	@Column(name = "budgetTarget")
 	private Double budgetTarget;
 	
@@ -56,19 +57,19 @@ public class Cause extends BaseEntity {
 		
 	}
 
-	public String getNameCause() {
+	public String getName() {
 		return this.name;
 	}
 	
-	public void setNameCause(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	
-	public String getDescriptionCause() {
+	public String getDescription() {
 		return this.description;
 	}
 	
-	public void setDescriptionCause(String description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 	
