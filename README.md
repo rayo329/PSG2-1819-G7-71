@@ -32,7 +32,7 @@ In the retrospective meeting, the team has a discussion about those results.
 | Day 2 (22/03)  |     -       |        | -         | -       |               |          |
 | Day 3 (23/03)  |     -       |        | -         | -       |               |          |
 | Day 4 (25/03)  |  :worried:  |        | -         | -       |               |          |
-| Day 5 (26/03)  |             |        |           | -       |               |          |
+| Day 5 (26/03)  |  :godmode:  |        |           | -       |               |          |
 | Day 6 (27/03)  |             |        |           |         |               |          |
 | Day 7 (28/03)  |             |        |           |         |               |          |
 | Day 8 (29/03)  |             |        |           |         |               |          |
