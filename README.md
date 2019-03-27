@@ -26,19 +26,19 @@ In the retrospective meeting, the team has a discussion about those results.
 
 ## Sprint Template
 
-| Day            | [Alejandro] | [Fran] | [David]   | [Angel] | [Jose Manuel] | [Miguel] |
-| -------------- | ----------- | ------ | --------- | ------- | ------------- | -------- |
-| Day 1 (21/03)  |     -       |        | :worried: | -       |               |          |
-| Day 2 (22/03)  |     -       |        | -         | -       |               |          |
-| Day 3 (23/03)  |     -       |        | -         | -       |               |          |
-| Day 4 (25/03)  |  :worried:  |        | -         | -       |               |          |
-| Day 5 (26/03)  |  :godmode:  |        | :godmode: | -       |               |          |
-| Day 6 (27/03)  |             |        | :godmode: |         |               |          |
-| Day 7 (28/03)  |             |        |           |         |               |          |
-| Day 8 (29/03)  |             |        |           |         |               |          |
-| Day 9 (01/04)  |             |        |           |         |               |          |
-| Day 10 (02/04) |             |        |           |         |               |          |
-| Day 11 (03/04) |             |        |           |         |               |          |
-| Day 12 (04/04) |             |        |           |         |               |          |
-| Day 13 (05/04) |             |        |           |         |               |          |
+| Day            | [Alejandro] | [Fran] | [David]   | [Angel] | [Jose Manuel] | [Miguel]     |
+| -------------- | ----------- | ------ | --------- | ------- | ------------- | --------     |
+| Day 1 (21/03)  |     -       |        | :worried: | -       |               | -            |
+| Day 2 (22/03)  |     -       |        | -         | -       |               | -            |
+| Day 3 (23/03)  |     -       |        | -         | -       |               |:neutral_face:|
+| Day 4 (25/03)  |  :worried:  |        | -         | -       |               | -            |
+| Day 5 (26/03)  |  :godmode:  |        | :godmode: | -       |               |:neutral_face:|
+| Day 6 (27/03)  |             |        | :godmode: |         |               |:godmode:     |
+| Day 7 (28/03)  |             |        |           |         |               |              |
+| Day 8 (29/03)  |             |        |           |         |               |              |
+| Day 9 (01/04)  |             |        |           |         |               |              |
+| Day 10 (02/04) |             |        |           |         |               |              |
+| Day 11 (03/04) |             |        |           |         |               |              |
+| Day 12 (04/04) |             |        |           |         |               |              |
+| Day 13 (05/04) |             |        |           |         |               |              |
 ...
