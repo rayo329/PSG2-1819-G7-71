@@ -8,21 +8,25 @@
 <petclinic:layout pageName="donations">
     <h2>Donaciones</h2>
 
-    <table id="vetsTable" class="table table-striped">
+    <table id="donationsTable" class="table table-striped">
         <thead>
         <tr>
-            <th>Nombre Causa</th>
+            <th>Cliente</th>
             <th>Cantidad Donada</th>
+            <th>Fecha Donación</th>
         </tr>
         </thead>
         <tbody>
         <c:forEach items="${donations}" var="donation">
             <tr>
                 <td>
-                    <c:out value="${donation.cause.name}"/>
+                    <c:out value="${donation.client}"/>
                 </td>
                 <td>
                     <c:out value="${donation.amountDonation}"/>
+                </td>
+                <td>
+                    <c:out value="${donation.donationDate}"/>
                 </td>
             </tr>
         </c:forEach>
