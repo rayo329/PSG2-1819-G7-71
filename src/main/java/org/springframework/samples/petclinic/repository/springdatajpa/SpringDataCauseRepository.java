@@ -27,4 +27,6 @@ import org.springframework.samples.petclinic.repository.RoomRepository;
  * @since 15.1.2013
  */
 public interface SpringDataCauseRepository extends CauseRepository, Repository<Cause, Integer> {
+	
+	
 }

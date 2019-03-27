@@ -51,3 +51,8 @@ INSERT INTO visits VALUES (1, 7, '2013-01-01', 'rabies shot');
 INSERT INTO visits VALUES (2, 8, '2013-01-02', 'rabies shot');
 INSERT INTO visits VALUES (3, 8, '2013-01-03', 'neutered');
 INSERT INTO visits VALUES (4, 7, '2013-01-04', 'spayed');
+
+
+INSERT INTO causes VALUES(1, 'Refugio canino', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit risus id turpis euismod elementum. Etiam at velit eget est euismod varius.', 500.0, 'SaveTheDogs');
+
+INSERT INTO donations VALUES(1, 1, 33.6);
