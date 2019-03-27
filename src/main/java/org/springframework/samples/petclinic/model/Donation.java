@@ -17,17 +17,17 @@ public class Donation extends BaseEntity {
 
 	@NotEmpty
 	@Column(name = "amount_donation")
-	private Double amountDonation;
+	private Double amount;
 
 	public Donation() {
 		
 	}
 	
-	public Double getAmountDonation() {
-		return this.amountDonation;
+	public Double getAmount() {
+		return this.amount;
 	}
-	public void setAmountDonation(Double amount) {
-		this.amountDonation = amount;
+	public void setAmount(Double amount) {
+		this.amount = amount;
 	}
 
 	public Cause getCause() {

@@ -21,6 +21,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Cause;
+import org.springframework.samples.petclinic.model.Donation;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
 import org.springframework.samples.petclinic.model.PetType;
@@ -29,6 +30,7 @@ import org.springframework.samples.petclinic.model.Room;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
 import org.springframework.samples.petclinic.repository.CauseRepository;
+import org.springframework.samples.petclinic.repository.DonationRepository;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
 import org.springframework.samples.petclinic.repository.RoomRepository;
@@ -54,7 +56,8 @@ public class ClinicServiceImpl implements ClinicService {
     private VisitRepository visitRepository;
     private RoomRepository roomRepository;
     private CauseRepository causeRepository;
-
+    private DonationRepository donationRepository;
+    
     @Autowired
     public ClinicServiceImpl(PetRepository petRepository, VetRepository vetRepository, OwnerRepository ownerRepository,
             VisitRepository visitRepository, RoomRepository roomRepository, CauseRepository causeRepository) {
@@ -232,6 +235,36 @@ public class ClinicServiceImpl implements ClinicService {
     @Transactional
     public Collection<Cause> findAllCauses() throws DataAccessException {
         return this.causeRepository.findAll();
+    }
+    
+    @Override
+    @Transactional
+    public Donation findDonationById(int donationId) throws DataAccessException {
+        return this.donationRepository.findById(donationId);
+    }
+    
+    @Override
+    @Transactional
+    public List<Donation> findDonationsByCauseId(Integer causeId){
+        return this.donationRepository.findByCauseId(causeId);
+    }
+
+    @Override
+    @Transactional
+    public void saveDonation(Donation donation) throws DataAccessException {
+        this.donationRepository.save(donation);
+    }
+
+    @Override
+    @Transactional
+    public void deleteDonationById(int donationId) throws DataAccessException {
+        this.donationRepository.deleteById(donationId);
+    }
+
+    @Override
+    @Transactional
+    public Collection<Donation> findAllDonations() throws DataAccessException {
+        return this.donationRepository.findAll();
     }
 
 }
