@@ -99,6 +99,7 @@ public class RoomController {
             model.put("petId", petId);
             model.put("room", room);
             model.put("roomsPet", roomsPet);
+            
  
             return "pets/createOrUpdateRoomForm";
         } else {
@@ -117,6 +118,7 @@ public class RoomController {
                 model.put("petId", petId);
                 model.put("room", room);
                 model.put("roomsPet", roomsPet);
+                model.put("message", "Fecha escogida en uso. Por favor, indíquenos otra fecha.");
                 
                 return "pets/createOrUpdateRoomForm";
         	}
