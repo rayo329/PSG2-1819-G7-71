@@ -182,6 +182,13 @@ public class ClinicServiceImpl implements ClinicService {
     public Collection<Room> findRoomsByPetId(int petId) {
         return roomRepository.findByPetId(petId);
     }
+    
+    @Override
+    @Transactional
+    public Collection<Room> findAllRooms() throws DataAccessException{
+    	return this.roomRepository.findAll();
+    }
+
 
     @Override
     @Transactional
