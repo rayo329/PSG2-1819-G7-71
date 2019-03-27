@@ -24,6 +24,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.samples.petclinic.model.Cause;
+import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Vets;
@@ -81,5 +82,13 @@ public class CauseController {
             return "redirect:/";
         }
     }
+	
+
+	@RequestMapping(value ="/causes/list", method = RequestMethod.GET)
+	public String showCauseList( Map<String, Object> model) {
+		Collection<Cause> causes = this.clinicService.findAllCauses();
+		model.put("causes", causes);
+		return "causes/causeList";
+	}
 
 }
