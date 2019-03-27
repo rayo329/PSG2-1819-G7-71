@@ -15,6 +15,7 @@
  */
 package org.springframework.samples.petclinic.web;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -38,9 +39,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author Arjen Poutsma
  */
 @Controller
+@RequestMapping("/causes/{causeId}")
 public class DonationController {
 
-	private static final String VIEWS_DONATION_CREATE_FORM = "vets/createDonationForm";
+	private static final String VIEWS_DONATION_CREATE_FORM = "donations/createDonationForm";
 	private final ClinicService clinicService;
 
 	@Autowired
@@ -61,8 +63,8 @@ public class DonationController {
 	}
 
 	@RequestMapping(value = "/donations/new", method = RequestMethod.POST)
-	public String processNewCauseForm(@Valid Donation donation, BindingResult result, Map<String, Object> model) {
-		List<Donation> donations = this.clinicService.findDonationsByCauseId(donation.getCause().getId());
+	public String processNewCauseForm(Cause cause, @Valid Donation donation, BindingResult result, Map<String, Object> model) {
+		List<Donation> donations = this.clinicService.findDonationsByCauseId(cause.getId());
 		Double sum = donations.stream().mapToDouble(x -> x.getAmount()).sum();
 
 		if (sum + donation.getAmount() > donation.getCause().getBudgetTarget()) {
@@ -72,6 +74,7 @@ public class DonationController {
 			model.put("donation", donation);
 			return VIEWS_DONATION_CREATE_FORM;
 		} else {
+			donation.setDate(new Date());
 			this.clinicService.saveDonation(donation);
 			return "redirect:/";
 		}
