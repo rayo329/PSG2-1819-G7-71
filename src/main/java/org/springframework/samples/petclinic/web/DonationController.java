@@ -1,7 +1,6 @@
 package org.springframework.samples.petclinic.web;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +9,7 @@ import org.springframework.samples.petclinic.service.ClinicService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -30,10 +30,10 @@ public class DonationController {
 		dataBinder.setDisallowedFields("id");
 	}
 	
-	@RequestMapping(value = "/list", method=RequestMethod.GET)
-	public String showAll(Map<String,Object> model){
+	@RequestMapping(value = "/list/{causeId}", method=RequestMethod.GET)
+	public String showAll(Map<String,Object> model,@PathVariable("causeId") int causeId){
 		
-		Collection<Donation> donations = this.clinicService.findAllDonations();
+		Collection<Donation> donations = this.clinicService.findAllDonationsById(causeId);
 		model.put("donations", donations);
 		return "donations/donationList";
 	}
