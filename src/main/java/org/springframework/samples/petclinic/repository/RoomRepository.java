@@ -15,6 +15,7 @@
  */
 package org.springframework.samples.petclinic.repository;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
@@ -45,5 +46,7 @@ public interface RoomRepository {
     void deleteById(int roomId) throws DataAccessException;
 
     Room findById(int id) throws DataAccessException;
+    
+    Collection<Room> findAll() throws DataAccessException;
 
 }

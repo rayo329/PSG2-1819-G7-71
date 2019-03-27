@@ -40,11 +40,14 @@
                 <petclinic:inputField label="Comienzo" name="start"/>
                 <petclinic:inputField label="Fin" name="end"/>
             </div>
-
+            
+			
             <div class="form-group">
                 <div class="col-sm-offset-2 col-sm-10">
                     <input type="hidden" name="petId" value="${petId}"/>
                     <button class="btn btn-default" type="submit">A&ntildeadir habitacion</button>
+                    <c:if test="${message!=null}"><p class="message_error"><c:out value="${message}"/></p></c:if>
+                    
                 </div>
             </div>
         </form:form>

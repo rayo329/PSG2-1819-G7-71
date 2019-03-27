@@ -81,6 +81,8 @@ public interface ClinicService {
     void saveRoom(Room room) throws DataAccessException;
 
     Collection<Room> findRoomsByPetId(int petId);
+    
+    Collection<Room> findAllRooms() throws DataAccessException;
 
     void deleteRoom(int roomId) throws DataAccessException;
 
