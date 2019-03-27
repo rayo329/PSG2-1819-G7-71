@@ -30,10 +30,10 @@ public class DonationController {
 		dataBinder.setDisallowedFields("id");
 	}
 	
-	@RequestMapping(value = "/list/{causeId}", method=RequestMethod.GET)
-	public String showAll(Map<String,Object> model,@PathVariable("causeId") int causeId){
+	@RequestMapping(value = "/list", method=RequestMethod.GET)
+	public String showAll(Map<String,Object> model){
 		
-		Collection<Donation> donations = this.clinicService.findAllDonationsById(causeId);
+		Collection<Donation> donations = this.clinicService.findAllDonations();
 		model.put("donations", donations);
 		return "donations/donationList";
 	}

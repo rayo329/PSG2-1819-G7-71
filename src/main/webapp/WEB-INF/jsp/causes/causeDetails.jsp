@@ -27,5 +27,24 @@
             <td><c:out value="${cause.organizationName}"/></td>
         </tr>
     </table>
+    <h5>
+    	Donaciones
+    </h5>
+    <table id="vetsTable" class="table table-striped">
+        <thead>
+        <tr>
+            <th>Cantidad Donada</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach items="${donations}" var="donation">
+            <tr>
+                <td>
+                    <c:out value="${donation.amountDonation}"/>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 
 </petclinic:layout>
