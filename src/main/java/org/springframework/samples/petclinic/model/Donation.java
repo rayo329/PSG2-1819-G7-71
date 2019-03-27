@@ -1,5 +1,7 @@
 package org.springframework.samples.petclinic.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -18,6 +20,10 @@ public class Donation extends BaseEntity {
 	@NotEmpty
 	@Column(name = "amount_donation")
 	private Double amount;
+	
+	@NotEmpty
+	@Column(name = "date_donation")
+	private Date date;
 
 	public Donation() {
 		
@@ -35,5 +41,13 @@ public class Donation extends BaseEntity {
 	}
 	public void setCause(Cause cause) {
 		this.cause = cause;
+	}
+	
+	public Date getDate() {
+		return this.date;
+	}
+	
+	public void setDate(Date date) {
+		this.date = date;
 	}
 }

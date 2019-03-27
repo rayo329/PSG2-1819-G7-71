@@ -97,8 +97,6 @@ public interface ClinicService {
 
     void saveDonation(Donation donation) throws DataAccessException;
     
-    void deleteDonationById(int donationId) throws DataAccessException;
-
     Collection<Donation> findAllDonations() throws DataAccessException;
     
     List<Donation> findDonationsByCauseId(Integer causeId);

@@ -257,12 +257,6 @@ public class ClinicServiceImpl implements ClinicService {
 
     @Override
     @Transactional
-    public void deleteDonationById(int donationId) throws DataAccessException {
-        this.donationRepository.deleteById(donationId);
-    }
-
-    @Override
-    @Transactional
     public Collection<Donation> findAllDonations() throws DataAccessException {
         return this.donationRepository.findAll();
     }

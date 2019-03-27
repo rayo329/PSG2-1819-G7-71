@@ -19,12 +19,7 @@ import java.util.Collection;
 import java.util.List;
 
 import org.springframework.dao.DataAccessException;
-import org.springframework.samples.petclinic.model.BaseEntity;
-import org.springframework.samples.petclinic.model.Cause;
 import org.springframework.samples.petclinic.model.Donation;
-import org.springframework.samples.petclinic.model.Pet;
-import org.springframework.samples.petclinic.model.PetType;
-import org.springframework.samples.petclinic.model.Visit;
 
 /**
  * Repository class for <code>Pet</code> domain objects All method names are compliant with Spring Data naming
@@ -41,8 +36,6 @@ public interface DonationRepository {
 
     void save(Donation donation) throws DataAccessException;
     
-    void deleteById(int donationId) throws DataAccessException;
-
     Collection<Donation> findAll() throws DataAccessException;
     
     List<Donation> findByCauseId(Integer causeId);
