@@ -34,7 +34,7 @@ In the retrospective meeting, the team has a discussion about those results.
 | Day 4 (25/03)  |  :worried:  |        | -         | -       |               | -            |
 | Day 5 (26/03)  |  :godmode:  |        | :godmode: | -       |               |:neutral_face:|
 | Day 6 (27/03)  |             |        | :godmode: |         |               |:godmode:     |
-| Day 7 (28/03)  |             |        |           |         |               |              |
+| Day 7 (28/03)  |             |        |           |         |               |:godmode:     |
 | Day 8 (29/03)  |             |        |           |         |               |              |
 | Day 9 (01/04)  |             |        |           |         |               |              |
 | Day 10 (02/04) |             |        |           |         |               |              |
