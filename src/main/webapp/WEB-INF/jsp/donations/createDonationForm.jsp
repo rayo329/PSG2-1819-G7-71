@@ -18,6 +18,7 @@
         <div class="form-group has-feedback">
         
             <petclinic:inputField label="Cantidad" name="amount"/>
+            <petclinic:inputField label="Cliente" name="client"/>
             
         </div>
 
