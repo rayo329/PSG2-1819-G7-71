@@ -54,7 +54,7 @@ public class ClinicServiceImpl implements ClinicService {
     private RoomRepository roomRepository;
     private CauseRepository causeRepository;
     private DonationRepository donationRepository;
-
+    
     @Autowired
     public ClinicServiceImpl(PetRepository petRepository, VetRepository vetRepository, OwnerRepository ownerRepository,
             VisitRepository visitRepository, RoomRepository roomRepository, CauseRepository causeRepository, DonationRepository donationRepository) {
@@ -241,10 +241,24 @@ public class ClinicServiceImpl implements ClinicService {
     public Collection<Cause> findAllCauses() throws DataAccessException {
         return this.causeRepository.findAll();
     }
+    
+    @Override
+    @Transactional
+    public Donation findDonationById(int donationId) throws DataAccessException {
+        return this.donationRepository.findById(donationId);
+    }
+    
 
-	@Override
-	public Collection<Donation> findAllDonations() throws DataAccessException {
-		return this.donationRepository.findAll();
+    @Override
+    @Transactional
+    public void saveDonation(Donation donation) throws DataAccessException {
+        this.donationRepository.save(donation);
+    }
+
+    @Override
+    @Transactional
+    public Collection<Donation> findAllDonations() throws DataAccessException {
+        return this.donationRepository.findAll();
 	}
 
 	@Override

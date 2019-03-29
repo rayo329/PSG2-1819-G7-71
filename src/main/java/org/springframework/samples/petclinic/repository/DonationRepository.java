@@ -10,8 +10,6 @@ public interface DonationRepository {
 	Donation findById(int id) throws DataAccessException;
 
     void save(Donation donation) throws DataAccessException;
-    
-    void deleteById(int donationId) throws DataAccessException;
 
     Collection<Donation> findAll() throws DataAccessException;
 
