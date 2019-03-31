@@ -14,13 +14,13 @@
         <thead>
         <tr>
             <th>Nombre</th>
-            <th>Target</th>
+            <th>Objetivo</th>
             <th>Organizacion</th>
             <th>Detalles</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${causes.causeList}" var="vet">
+        <c:forEach items="${causes}" var="cause">
             <tr>
                 <td>
                     <c:out value="${cause.name}"/>
@@ -32,27 +32,11 @@
                     <c:out value="${cause.organizationName}"/>
                 </td>
                  <td>
-                    <%-- <spring:url value="/causes/{causeId}/show" var="showUrl">
-                        <spring:param name="causeId" value="${cause.id}"/>
-                    </spring:url> --%>
-                    <%-- <a href="<spring:url value="/causes/{causeId}/detalles" htmlEscape="true" />">Mostrar</a> --%>
+                  <spring:url value="/causes/${cause.id}/details" var="details"/>
+                  <a href="<spring:url value='${details}' htmlEscape='true'/>">Mostrar</a> 
                 </td>
             </tr>
         </c:forEach>
         </tbody>
     </table>
-
-    <table class="table-buttons">
-        <tr>
-            <td>
-                <a href="<spring:url value="/vets.xml" htmlEscape="true" />">View as XML</a>
-            </td>
-            <td>
-                <a href="<spring:url value="/vets.json" htmlEscape="true" />">View as JSON</a>
-            </td>
-        </tr>
-    </table>
-    
-   <%--  <br/>
-    <a class="btn btn-default" href='<spring:url value="/vets/new" htmlEscape="true"/>'>A&ntildeadir veterinario</a> --%>
 </petclinic:layout>
