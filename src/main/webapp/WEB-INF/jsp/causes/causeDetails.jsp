@@ -27,10 +27,11 @@
             <td><c:out value="${cause.organizationName}"/></td>
         </tr>
     </table>
+    
     <h5>
     	Donaciones
     </h5>
-    <table id="donationsTable" class="table table-striped">
+      <table id="donationsTable" class="table table-striped">
         <thead>
         <tr>
             <th>Cliente</th>
