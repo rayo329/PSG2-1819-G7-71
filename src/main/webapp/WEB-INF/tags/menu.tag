@@ -36,6 +36,11 @@
                 <petclinic:menuItem active="${name eq 'causes/new'}" url="/causes/new" title="Crear cause">
                     <span>Crear causa</span>
                 </petclinic:menuItem>
+                
+                <petclinic:menuItem active="${name eq 'causes/list'}" url="/causes/list" title="Listar causas">
+                	<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                    <span>Listado de causas</span>
+                </petclinic:menuItem>
 
                 <petclinic:menuItem active="${name eq 'error'}" url="/oups.html"
                             title="trigger a RuntimeException to see how it is handled">
