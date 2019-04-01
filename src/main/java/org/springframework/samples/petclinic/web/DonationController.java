@@ -54,9 +54,9 @@ public class DonationController {
 	@RequestMapping(value = "/donations/new", method = RequestMethod.POST)
 	public String processNewCauseForm(Cause cause, @Valid Donation donation, BindingResult result, Map<String, Object> model) {
 		Collection <Donation> donations = this.clinicService.findAllDonationsById(cause.getId());
-		Double sum = donations.stream().mapToDouble(x -> x.getAmount()).sum();
+		Double sum = donations.stream().mapToDouble(x -> x.getAmountDonation()).sum();
 
-		if (sum + donation.getAmount() > donation.getCause().getBudgetTarget()) {
+		if (sum + donation.getAmountDonation() > donation.getCause().getBudgetTarget()) {
 			model.put("donation", donation);
 			return VIEWS_DONATION_CREATE_FORM;
 		} else if (result.hasErrors()) {

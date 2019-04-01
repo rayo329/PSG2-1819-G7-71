@@ -57,4 +57,6 @@ INSERT INTO causes VALUES(1, 'Refugio canino', 'Lorem ipsum dolor sit amet, cons
 INSERT INTO causes VALUES(2, 'Refugio gatuno', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut hendrerit risus id turpis euismod elementum. Etiam at velit eget est euismod varius.', 400.0, 'SaveTheCats');
 
 INSERT INTO donations VALUES(1, 1, 33.6, '2019-01-01', 'Rovira');
-INSERT INTO donations VALUES(2, 2, 23.60, '2019-02-02', 'Reverte');
+INSERT INTO donations VALUES(2, 2, 23.89, '2019-02-02', 'Reverte');
+INSERT INTO donations VALUES(3, 2, 89.27, '2017-04-21', 'Carlos');
+INSERT INTO donations VALUES(4, 2, 230.85, '2012-12-12', 'Pablo');

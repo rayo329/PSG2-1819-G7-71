@@ -37,10 +37,10 @@ public class Donation extends BaseEntity {
 		
 	}
 	
-	public Double getAmount() {
+	public Double getAmountDonation() {
 		return this.amountDonation;
 	}
-	public void setAmount(Double amount) {
+	public void setAmountDonation(Double amount) {
 		this.amountDonation = amount;
 	}
 

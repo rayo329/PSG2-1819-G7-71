@@ -17,7 +17,7 @@
         <input type="hidden" name="date" value="${donation.date}"/>
         <div class="form-group has-feedback">
         
-            <petclinic:inputField label="Cantidad" name="amount"/>
+            <petclinic:inputField label="Cantidad" name="amountDonation"/>
             <petclinic:inputField label="Cliente" name="client"/>
             
         </div>
