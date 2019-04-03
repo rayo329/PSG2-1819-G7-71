@@ -36,7 +36,7 @@
         <tr>
             <th>Cliente</th>
             <th>Cantidad Donada</th>
-            <th>Fecha Donación</th>
+            <th>Fecha Donaciï¿½n</th>
         </tr>
         </thead>
         <tbody>
@@ -55,5 +55,10 @@
         </c:forEach>
         </tbody>
     </table>
+
+    <td>
+        <spring:url value="/donations/${cause.id}/new" var="new"/>
+        <a href="<spring:url value='${add-donation-form}' htmlEscape='true'/>">Mostrar</a> 
+      </td>
 
 </petclinic:layout>
