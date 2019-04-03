@@ -12,9 +12,9 @@
     </h2>
     
     <form:form modelAttribute="donation" class="form-horizontal" id="add-donation-form">
-        <input type="hidden" name="id" value="${donation.id}"/>
-        <input type="hidden" name="cause" value="${donation.cause}"/>
-        <input type="hidden" name="date" value="${donation.date}"/>
+        <form:hidden path="donationDate"/>
+        <input type="hidden" name="causeId" value="${causeId}"/>
+
         <div class="form-group has-feedback">
         
             <petclinic:inputField label="Cantidad" name="amountDonation"/>

@@ -57,7 +57,6 @@
     </table>
 
     <br/>
-    <a class="btn btn-default" href='<spring:url value="/donations/new" htmlEscape="true"/>'>Añadir donación</a>
-
+    <a class="btn btn-default" href='<spring:url value="/causes/${cause.id}/donations/new" htmlEscape="true"/>'>Añadir donación</a>
 
 </petclinic:layout>

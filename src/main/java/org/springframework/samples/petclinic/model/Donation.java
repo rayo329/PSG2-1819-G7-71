@@ -21,7 +21,7 @@ public class Donation extends BaseEntity {
     @JoinColumn(name = "cause_id")
     private Cause cause;
 
-	@NotEmpty
+	@NotNull
 	@Column(name = "amount_donation")
 	private Double amountDonation;
 	
@@ -31,10 +31,11 @@ public class Donation extends BaseEntity {
 	private Date donationDate;
 	
 	@NotBlank
+	@Column(name = "client")
 	private String client;
 
 	public Donation() {
-		
+		this.donationDate = new Date();
 	}
 	
 	public Double getAmountDonation() {
