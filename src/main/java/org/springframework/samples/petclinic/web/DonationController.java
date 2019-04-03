@@ -52,7 +52,7 @@ public class DonationController {
 	}
 
 	@RequestMapping(value = "/donations/new", method = RequestMethod.POST)
-	public String processNewCauseForm(Cause cause, @Valid Donation donation, BindingResult result, Map<String, Object> model) {
+	public String processNewCauseForm(int idCause, @Valid Donation donation, BindingResult result, Map<String, Object> model) {
 		Collection <Donation> donations = this.clinicService.findAllDonationsById(cause.getId());
 		Double sum = donations.stream().mapToDouble(x -> x.getAmountDonation()).sum();
 

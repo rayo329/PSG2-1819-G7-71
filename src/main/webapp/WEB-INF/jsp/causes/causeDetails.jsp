@@ -56,9 +56,8 @@
         </tbody>
     </table>
 
-    <td>
-        <spring:url value="/donations/${cause.id}/new" var="new"/>
-        <a href="<spring:url value='${add-donation-form}' htmlEscape='true'/>">Mostrar</a> 
-      </td>
+    <br/>
+    <a class="btn btn-default" href='<spring:url value="/donations/new" htmlEscape="true"/>'>Añadir donación</a>
+
 
 </petclinic:layout>
