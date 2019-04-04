@@ -81,7 +81,7 @@ public class CauseController {
             return VIEWS_CAUSE_CREATE_FORM;
         } else {
             this.clinicService.saveCause(cause);
-            return "redirect:/";
+            return "redirect:/causes/list";
         }
     }
 	

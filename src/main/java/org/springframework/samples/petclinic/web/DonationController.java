@@ -78,7 +78,7 @@ public class DonationController {
 				return VIEWS_DONATION_CREATE_FORM;
 			} else {
 				this.clinicService.saveDonation(donation);
-				return "redirect:/";
+				return "redirect:/causes/"+ causeId + "/details";
 			}
 		} catch(Throwable oops) {
 			model.put("donation", donation);

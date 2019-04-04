@@ -4,7 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="petclinic" tagdir="/WEB-INF/tags" %>
 
-<petclinic:layout pageName="causes">
+<petclinic:layout pageName="causes/list">
 
     <h2>Informacion de la causa</h2>
 
@@ -36,7 +36,7 @@
         <tr>
             <th>Cliente</th>
             <th>Cantidad Donada</th>
-            <th>Fecha Donaci�n</th>
+            <th>Fecha Donacion</th>
         </tr>
         </thead>
         <tbody>
@@ -57,6 +57,6 @@
     </table>
 
     <br/>
-    <a class="btn btn-default" href='<spring:url value="/causes/${cause.id}/donations/new" htmlEscape="true"/>'>Añadir donación</a>
+    <a class="btn btn-default" href='<spring:url value="/causes/${cause.id}/donations/new" htmlEscape="true"/>'>A&ntildeadir donacion</a>
 
 </petclinic:layout>
