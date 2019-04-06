@@ -39,4 +39,10 @@
         </c:forEach>
         </tbody>
     </table>
+
+    <div class="col-sm-offset-2 col-sm-10"></div>
+        <spring:url value="/causes/new" var="newCause"/>
+        <a href="<spring:url value='${newCause}' htmlEscape='true'/>"><input type="button" value="Crear causa" class="btn btn-default"/></a>
+    </div>
+
 </petclinic:layout>
