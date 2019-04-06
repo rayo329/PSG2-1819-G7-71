@@ -28,12 +28,12 @@ In the retrospective meeting, the team has a discussion about those results.
 
 | Day            | [Alejandro] | [Fran]     | [David]   | [Angel]   | [Jose Manuel] | [Miguel]       |
 | -------------- | ----------- | ---------- | --------- | --------- | ------------- | -------------- |
-| Day 1 (21/03)  | -           |:worried:   | :worried: | -         | :neutral-face:| -              |
+| Day 1 (21/03)  | -           |:worried:   | :worried: | -         | :neutral_face:| -              |
 | Day 2 (22/03)  | -           | -          | -         | -         | -             | -              |
 | Day 3 (23/03)  | -           | -          | -         | -         | -             | :neutral_face: |
 | Day 4 (25/03)  | :worried:   | -          | -         | -         | -             | -              |
-| Day 5 (26/03)  | :godmode:   | -          | :godmode: | -         | :neutral-face:| :neutral_face: |
-| Day 6 (27/03)  | -           |:godmode:   | :godmode: | :godmode: | :neutral-face:| :godmode:      |
+| Day 5 (26/03)  | :godmode:   | -          | :godmode: | -         | :neutral_face:| :neutral_face: |
+| Day 6 (27/03)  | -           |:godmode:   | :godmode: | :godmode: | :neutral_face:| :godmode:      |
 | Day 7 (28/03)  | -           | -          | -         | -         | -             | :godmode:      |
 | Day 8 (29/03)  | -           |:godmode:   | -         | -         | -             | -              |
 | Day 9 (30/03)  | -           | -          | -         | -         | -             | -              |
