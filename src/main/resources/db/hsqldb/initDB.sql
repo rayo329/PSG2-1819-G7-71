@@ -43,6 +43,24 @@ CREATE TABLE owners (
 );
 CREATE INDEX owners_last_name ON owners (last_name);
 
+CREATE TABLE causes (
+  id		 INTEGER IDENTITY PRIMARY KEY,
+  name_cause VARCHAR(255),
+  description_cause VARCHAR(400),
+  budgetTarget DOUBLE,
+  organization_name VARCHAR(50)
+ );
+ 
+ CREATE TABLE donations(
+  id		 INTEGER IDENTITY PRIMARY KEY,
+  cause_id INTEGER NOT NULL,
+  amount_donation DOUBLE,
+  donation_date DATE,
+  client VARCHAR(255)
+ );
+ALTER TABLE donations ADD CONSTRAINT fk_donations_causes FOREIGN KEY (cause_id) REFERENCES causes (id);
+CREATE INDEX donations_cause_id ON donations (cause_id);
+
 CREATE TABLE pets (
   id         INTEGER IDENTITY PRIMARY KEY,
   name       VARCHAR(30),
