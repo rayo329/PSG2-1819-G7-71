@@ -42,5 +42,6 @@ In the retrospective meeting, the team has a discussion about those results.
 | Day 12 (02/04) | :godmode:   | -         | -         | -              | -              | -              |
 | Day 13 (03/04) | -           | :godmode: | :worried: | :godmode:      | -              | :worried:      |
 | Day 14 (04/04) | -           | -         | :worried: | :neutral_face: | -              | -              |
-| Day 15 (05/04) | :godmode:   | :godmode: |           | -              | :godmode:      | :godmode:      |
-...
+| Day 15 (05/04) | :godmode:   | :godmode: | -         | -              | :godmode:      | :godmode:      |
+>>>>>>
+>>>>>>...
